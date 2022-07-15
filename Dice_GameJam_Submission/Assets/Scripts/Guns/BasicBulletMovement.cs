@@ -5,11 +5,13 @@ using UnityEngine;
 public class BasicBulletMovement : MonoBehaviour
 {
     public GameObject FirePoint;
-    private float bulletSpeed = 2f;
+    private float bulletSpeed = 0.8f;
+    Vector3 fireDir;
     // Start is called before the first frame update
     void Start()
     {
-        //transform.Rotate(new Vector3(0f, 0f, FirePoint.transform.rotation.z));
+        transform.Rotate(new Vector3(0f, 0f, FirePoint.transform.rotation.z));
+        StartCoroutine(lifetimer());
     }
 
     // Update is called once per frame
@@ -25,6 +27,20 @@ public class BasicBulletMovement : MonoBehaviour
 
     private void move()
     {
-        transform.Translate(transform.forward * bulletSpeed);
+        transform.Translate(Vector2.right * bulletSpeed);
+    }
+
+    IEnumerator lifetimer()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Foreground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

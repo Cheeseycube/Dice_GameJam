@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2819685560153458980}
   - component: {fileID: 2819685560153458983}
   - component: {fileID: 8287224693635174828}
+  - component: {fileID: -4223187524483286250}
   m_Layer: 0
   m_Name: bullet_simple_prefab
   m_TagString: Untagged
@@ -95,4 +96,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396d377404f8302448abf7cb368dafbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoint: {fileID: 9086743045866508095, guid: 9bb9824bbba4a354dbfec9bfbd937b0f, type: 3}
+  FirePoint: {fileID: 8124033874532362287, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+--- !u!61 &-4223187524483286250
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2819685560153458982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0014064908, y: -0.0014066696}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.6}
+    newSize: {x: 1, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8115128, y: 0.41151297}
+  m_EdgeRadius: 0
