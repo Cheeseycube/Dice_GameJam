@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396d377404f8302448abf7cb368dafbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoint: {fileID: 9086743045866508095, guid: 9bb9824bbba4a354dbfec9bfbd937b0f, type: 3}
+  FirePoint: {fileID: 321128291358175121, guid: 5832d31bdc79b3549893749fe072ae4c, type: 3}
