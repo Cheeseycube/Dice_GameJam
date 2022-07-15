@@ -11,15 +11,15 @@ public class TopDownPlayer : MonoBehaviour, IKillable
     float verticalInput;
     float angle = 0f;
 
-    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private int maxHealth = 100;
     public static bool PlayerDead = false;
     private GameObject damageLight;
 
     void Start()
     {
+        damageableComponent = this.gameObject.AddComponent<DamageableComponent>() as DamageableComponent;
         rb = GetComponent<Rigidbody2D>();
-        //bodyCollider = GetComponent<PolygonCollider2D>();
         damageableComponent.SetMaxHealth(maxHealth);
     }
 
@@ -60,7 +60,7 @@ public class TopDownPlayer : MonoBehaviour, IKillable
 
     public void NotifyDamage()
     {
-        DamageLightToggle();
+        StartCoroutine(DamageLightToggle());
     }
 
     IEnumerator DamageLightToggle()

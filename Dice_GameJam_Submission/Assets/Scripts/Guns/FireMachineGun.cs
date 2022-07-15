@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class FireMachineGun : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public GameObject FirePoint;
+    [SerializeField] public Light2D MuzzleFlashLight;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
