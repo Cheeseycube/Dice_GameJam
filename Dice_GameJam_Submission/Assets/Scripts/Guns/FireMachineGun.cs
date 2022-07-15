@@ -57,7 +57,7 @@ public class FireMachineGun : MonoBehaviour
     IEnumerator MuzzleFlashTimer()
     {
         MuzzleFlashLight.enabled = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         MuzzleFlashLight.enabled = false;
     }
 }
