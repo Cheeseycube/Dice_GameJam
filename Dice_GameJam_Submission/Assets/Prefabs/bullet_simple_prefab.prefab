@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396d377404f8302448abf7cb368dafbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoint: {fileID: 321128291358175121, guid: 5832d31bdc79b3549893749fe072ae4c, type: 3}
+  FirePoint: {fileID: 8124033874532362287, guid: 2136b934a89089946912546dd060cf1d, type: 3}
 --- !u!61 &-4223187524483286250
 BoxCollider2D:
   m_ObjectHideFlags: 0

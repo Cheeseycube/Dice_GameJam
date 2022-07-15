@@ -35,4 +35,12 @@ public class BasicBulletMovement : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Foreground"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
