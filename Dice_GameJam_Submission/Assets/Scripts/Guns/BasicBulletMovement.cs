@@ -7,9 +7,12 @@ public class BasicBulletMovement : MonoBehaviour
     public GameObject FirePoint;
     private float bulletSpeed = 0.8f;
     Vector3 fireDir;
+
+    BoxCollider2D bulletCol;
     // Start is called before the first frame update
     void Start()
     {
+        bulletCol = GetComponent<BoxCollider2D>();
         transform.Rotate(new Vector3(0f, 0f, FirePoint.transform.rotation.z));
         StartCoroutine(lifetimer());
     }
