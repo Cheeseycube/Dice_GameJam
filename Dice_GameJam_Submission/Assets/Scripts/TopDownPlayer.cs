@@ -2,39 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopDownPlayer : MonoBehaviour
+public class TopDownPlayer : MonoBehaviour, IKillable
 {
     Rigidbody2D rb;
     PolygonCollider2D bodyCollider;
+    DamageableComponent damageableComponent;
     float horizontalInput;
     float verticalInput;
     float angle = 0f;
 
-    [SerializeField] float movementSpeed = 5f;
-    [SerializeField] public static float health = 100f;
+    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private int maxHealth = 100;
     public static bool PlayerDead = false;
-    public GameObject damageLight;
-    // Start is called before the first frame update
+    private GameObject damageLight;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         //bodyCollider = GetComponent<PolygonCollider2D>();
+        damageableComponent.SetMaxHealth(maxHealth);
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
     }
 
     private void FixedUpdate()
     {
-        /*(if (Player.PlayerDead)
+        if (PlayerDead)
         {
             rb.velocity = new Vector2(0, 0);
             return;
-        }*/
+        }
         move();
         rotatePlayer();
     }
@@ -51,21 +52,21 @@ public class TopDownPlayer : MonoBehaviour
         angle = Vector2.SignedAngle(Vector2.right, direction);
         transform.eulerAngles = new Vector3(0, 0, angle);
     }
-    public void TakeDamage(float damageDealt)
+
+    public void Die()
     {
-        health -= damageDealt;
-        if (health <= 0f)
-        {
-            PlayerDead = true;
-        }
-    }
-    public void DamageKick()
-    {
-        rb.velocity = new Vector2(0f, 30f);
-    }
-    public void DamageIndicator(bool isDamaged)
-    {
-        damageLight.SetActive(isDamaged);
+        PlayerDead = true;
     }
 
+    public void NotifyDamage()
+    {
+        DamageLightToggle();
+    }
+
+    IEnumerator DamageLightToggle()
+    {
+        damageLight.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        damageLight.SetActive(false);
+    }
 }
