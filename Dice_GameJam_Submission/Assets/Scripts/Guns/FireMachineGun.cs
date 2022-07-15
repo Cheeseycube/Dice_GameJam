@@ -33,7 +33,7 @@ public class FireMachineGun : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             spawnBullet();
-            MuzzleFlashLight.enabled = true;
+            StartCoroutine(MuzzleFlashTimer());
         }
     }
 
@@ -52,5 +52,12 @@ public class FireMachineGun : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         mayshoot = true;
+    }
+
+    IEnumerator MuzzleFlashTimer()
+    {
+        MuzzleFlashLight.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        MuzzleFlashLight.enabled = false;
     }
 }
