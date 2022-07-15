@@ -19,7 +19,6 @@ public class TopDownPlayer : MonoBehaviour
         //bodyCollider = GetComponent<PolygonCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -40,10 +39,7 @@ public class TopDownPlayer : MonoBehaviour
 
     private void move()
     {
-        
-        
         rb.velocity = new Vector2(horizontalInput * movementSpeed, verticalInput * movementSpeed);
-        
     }
 
     private void FlipSprite()
