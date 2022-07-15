@@ -12,7 +12,6 @@ public class TopDownPlayer : MonoBehaviour
     [SerializeField] public static float health = 100f;
     public static bool PlayerDead = false;
     public GameObject damageLight;
-    public static bool slowed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,14 +40,10 @@ public class TopDownPlayer : MonoBehaviour
 
     private void move()
     {
-        if (slowed)
-        {
-            rb.velocity = new Vector2(horizontalInput * 3f, verticalInput * 3f);
-        }
-        else
-        {
-            rb.velocity = new Vector2(horizontalInput * movementSpeed, verticalInput * movementSpeed);
-        }
+        
+        
+        rb.velocity = new Vector2(horizontalInput * movementSpeed, verticalInput * movementSpeed);
+        
     }
 
     private void FlipSprite()
