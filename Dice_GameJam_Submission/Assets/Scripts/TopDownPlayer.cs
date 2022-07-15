@@ -8,6 +8,8 @@ public class TopDownPlayer : MonoBehaviour
     PolygonCollider2D bodyCollider;
     float horizontalInput;
     float verticalInput;
+    float angle = 0f;
+
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] public static float health = 100f;
     public static bool PlayerDead = false;
@@ -34,7 +36,7 @@ public class TopDownPlayer : MonoBehaviour
             return;
         }*/
         move();
-        FlipSprite();
+        rotatePlayer();
     }
 
     private void move()
@@ -42,14 +44,12 @@ public class TopDownPlayer : MonoBehaviour
         rb.velocity = new Vector2(horizontalInput * movementSpeed, verticalInput * movementSpeed);
     }
 
-    private void FlipSprite()
+    private void rotatePlayer()
     {
-        bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        if (playerHasHorizontalSpeed)
-        {
-            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f); // was 1f
-        }
-
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePosition - transform.position;
+        angle = Vector2.SignedAngle(Vector2.right, direction);
+        transform.eulerAngles = new Vector3(0, 0, angle);
     }
     public void TakeDamage(float damageDealt)
     {
