@@ -7,6 +7,8 @@ public class FireMachineGun : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject FirePoint;
 
+    private bool mayshoot = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +18,36 @@ public class FireMachineGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    private void FixedUpdate()
+    {
         FireGun();
     }
 
     private void FireGun()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            Instantiate(bulletPrefab, FirePoint.transform.position, FirePoint.transform.rotation);
+            spawnBullet();
         }
+    }
+
+    private void spawnBullet()
+    {
+        if (mayshoot)
+        {
+            mayshoot = false;
+            Instantiate(bulletPrefab, FirePoint.transform.position, FirePoint.transform.rotation);
+            StartCoroutine(FireRateTimer());
+
+        }
+    }
+
+    IEnumerator FireRateTimer()
+    {
+        yield return new WaitForSeconds(0.2f);
+        mayshoot = true;
     }
 }

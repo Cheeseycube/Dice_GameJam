@@ -11,6 +11,7 @@ public class BasicBulletMovement : MonoBehaviour
     void Start()
     {
         transform.Rotate(new Vector3(0f, 0f, FirePoint.transform.rotation.z));
+        StartCoroutine(lifetimer());
     }
 
     // Update is called once per frame
@@ -27,5 +28,11 @@ public class BasicBulletMovement : MonoBehaviour
     private void move()
     {
         transform.Translate(Vector2.right * bulletSpeed);
+    }
+
+    IEnumerator lifetimer()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }
