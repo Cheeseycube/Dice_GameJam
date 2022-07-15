@@ -2333,6 +2333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1128885713}
   - component: {fileID: 1128885714}
+  - component: {fileID: 1128885715}
   m_Layer: 0
   m_Name: Rail_gun placeholder
   m_TagString: Untagged
@@ -2406,6 +2407,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1128885715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128885712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465b2acceff4fc949bfec18999a048b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  FirePoint: {fileID: 150772806}
 --- !u!4 &1441122296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8124033874532362276, guid: 2136b934a89089946912546dd060cf1d, type: 3}
