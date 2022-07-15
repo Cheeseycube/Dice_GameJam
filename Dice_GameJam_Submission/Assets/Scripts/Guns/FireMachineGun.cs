@@ -33,6 +33,7 @@ public class FireMachineGun : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             spawnBullet();
+            MuzzleFlashLight.enabled = true;
         }
     }
 
