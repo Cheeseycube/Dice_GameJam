@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicBulletMovement : MonoBehaviour
 {
     public GameObject FirePoint;
-    private float bulletSpeed = 0.06f;
+    private float bulletSpeed = 0.8f;
     Vector3 fireDir;
     // Start is called before the first frame update
     void Start()
