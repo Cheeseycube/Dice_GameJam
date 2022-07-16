@@ -17,8 +17,11 @@ public class RandomWeapons : MonoBehaviour
 
     private int CurrentWeapon = 0;
 
-    private float waitTime = 3f;
-    private float diceRollTime = 3f;
+    [SerializeField] private float initialWaitTime = 10f;
+    [SerializeField] private float diceRollTime = 3f;
+    [SerializeField] private float flashingTime = 3f;
+    [SerializeField] private float whiteFlashTime = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,12 +44,12 @@ public class RandomWeapons : MonoBehaviour
     // use the coroutines to start off the animations
     IEnumerator EnableMachineGun()
     {
-        yield return new WaitForSeconds(diceRollTime);
+        yield return new WaitForSeconds(whiteFlashTime);
         MachineGun.SetActive(true);
         RailGun.SetActive(false);
         FireBall.SetActive(false);
         FindObjectOfType<FireMachineGun>().Set_mayFire(true);
-        FindObjectOfType<WeaponsUI>().NoDiceRolling();
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetMachineGun();
         FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
@@ -54,47 +57,70 @@ public class RandomWeapons : MonoBehaviour
 
     IEnumerator EnableRailGun()
     {
-        yield return new WaitForSeconds(diceRollTime);
+        yield return new WaitForSeconds(whiteFlashTime);
         MachineGun.SetActive(false);
         RailGun.SetActive(true);
         FireBall.SetActive(false);
         FindObjectOfType<FireRailGun>().Set_mayFire(true);
-        FindObjectOfType<WeaponsUI>().NoDiceRolling();
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetRailGun();
+        FindObjectOfType<WeaponsUI>().DisableAnimations();
+        maySwap = true;
+    }
+
+    IEnumerator EnableFireBall()
+    {
+        yield return new WaitForSeconds(whiteFlashTime);
+        MachineGun.SetActive(false);
+        RailGun.SetActive(false);
+        FireBall.SetActive(true);
+        FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
+        FindObjectOfType<WeaponsUI>().SetFireBall();
         FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
     }
 
     IEnumerator SwappingRailGunAnim()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(flashingTime);
         FindObjectOfType<WeaponsUI>().DiceRolling();
-        StartCoroutine(EnableRailGun());
+        StartCoroutine(RailGunEndingAnim());
     }
     IEnumerator SwappingMachineGunAnim()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(flashingTime);
         FindObjectOfType<WeaponsUI>().DiceRolling();
-        StartCoroutine(EnableMachineGun());
+        StartCoroutine(MachineGunEndingAnim());
     }
     IEnumerator SwappingFireBallAnim()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(flashingTime);
         FindObjectOfType<WeaponsUI>().DiceRolling();
-        StartCoroutine(EnableFireBall());
+        StartCoroutine(FireBallEndingAnim());
     }
 
-    IEnumerator EnableFireBall()
+    IEnumerator MachineGunEndingAnim()
+    {
+        
+        yield return new WaitForSeconds(diceRollTime);
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(true);
+        StartCoroutine(EnableMachineGun());
+    }
+
+    IEnumerator RailGunEndingAnim()
+    {
+
+        yield return new WaitForSeconds(diceRollTime);
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(true);
+        StartCoroutine(EnableRailGun());
+    }
+
+    IEnumerator FireBallEndingAnim()
     {
         yield return new WaitForSeconds(diceRollTime);
-        MachineGun.SetActive(false);
-        RailGun.SetActive(false);
-        FireBall.SetActive(true);
-        FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
-        FindObjectOfType<WeaponsUI>().NoDiceRolling();
-        FindObjectOfType<WeaponsUI>().SetFireBall();
-        FindObjectOfType<WeaponsUI>().DisableAnimations();
-        maySwap = true;
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(true);
+        StartCoroutine(EnableFireBall());
     }
 
 
@@ -149,7 +175,7 @@ public class RandomWeapons : MonoBehaviour
 
     IEnumerator WeaponTimer()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(initialWaitTime);
         SwapWeapons();
     }
 
