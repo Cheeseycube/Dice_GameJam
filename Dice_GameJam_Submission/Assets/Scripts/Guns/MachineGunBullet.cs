@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBulletMovement : MonoBehaviour
+public class MachineGunBullet : MonoBehaviour
 {
     public GameObject FirePoint;
     private float bulletSpeed = 0.8f;
-    Vector3 fireDir;
+
+    [SerializeField] int damagePerHit = 20;
 
     BoxCollider2D bulletCol;
     // Start is called before the first frame update
@@ -41,9 +42,15 @@ public class BasicBulletMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Foreground"))
+
+         if(col.gameObject.TryGetComponent<DamageableComponent>(out DamageableComponent target))
         {
-            Destroy(gameObject);
+            target.TakeDamage(damagePerHit);
         }
+
+
+        // DO THIS LAST
+        Destroy(gameObject);
+
     }
 }
