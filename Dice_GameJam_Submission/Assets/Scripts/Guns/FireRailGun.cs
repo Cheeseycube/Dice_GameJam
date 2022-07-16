@@ -7,6 +7,7 @@ public class FireRailGun : MonoBehaviour
     BoxCollider2D gunCol;
     SpriteRenderer myrend;
     Animator myanim;
+    [SerializeField] private ParticleSystem ChargeParticles;
 
     private bool mayFire = true;
     // Start is called before the first frame update
