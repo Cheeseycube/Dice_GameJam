@@ -2018,23 +2018,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &429379795 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 429379795, guid: 2136b934a89089946912546dd060cf1d, type: 3}
-  m_PrefabInstance: {fileID: 8124033875414888412}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &429379800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429379795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00802e1cee300a84fb02bd9345b0c98f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,14 +2442,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 429379798, guid: 2136b934a89089946912546dd060cf1d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 429379798, guid: 2136b934a89089946912546dd060cf1d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1985640987
-      objectReference: {fileID: 0}
     - target: {fileID: 8124033874532362276, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_RootOrder
       value: 1

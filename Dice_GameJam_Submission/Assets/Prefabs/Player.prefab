@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 429379798}
   - component: {fileID: 429379797}
   - component: {fileID: 429379799}
+  - component: {fileID: 429379800}
   m_Layer: 0
   m_Name: RailGunShot
   m_TagString: Untagged
@@ -142,8 +143,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1985640987
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf2affee69fe11941aab0629efc1ecbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -201,6 +202,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.550409, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &429379800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429379795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00802e1cee300a84fb02bd9345b0c98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1128885712
 GameObject:
   m_ObjectHideFlags: 0
