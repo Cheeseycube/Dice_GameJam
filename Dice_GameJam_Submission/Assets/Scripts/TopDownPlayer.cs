@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity;
 
 public class TopDownPlayer : MonoBehaviour, IKillable
 {
@@ -16,17 +17,35 @@ public class TopDownPlayer : MonoBehaviour, IKillable
     public static bool PlayerDead = false;
     [SerializeField] private GameObject damageLight;
 
+    List<Sprite> spriteList = new List<Sprite>();
+    [SerializeField] private Sprite FacingRight;
+    [SerializeField] private Sprite FacingForwards;
+    [SerializeField] private Sprite FacingBackwards;
+
+    SpriteRenderer myrend;
+    
     void Start()
     {
+        spriteList.Add(FacingRight);
+        spriteList.Add(FacingForwards);
+        spriteList.Add(FacingBackwards);
+        myrend = GetComponent<SpriteRenderer>();
         damageableComponent = this.gameObject.AddComponent<DamageableComponent>() as DamageableComponent;
         rb = GetComponent<Rigidbody2D>();
         damageableComponent.SetMaxHealth(maxHealth);
+        myrend.sprite = spriteList[1];
+    }
+
+    private void Awake()
+    {
+        
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        FlipSprite();
     }
 
     private void FixedUpdate()
@@ -51,6 +70,11 @@ public class TopDownPlayer : MonoBehaviour, IKillable
         Vector2 direction = mousePosition - transform.position;
         angle = Vector2.SignedAngle(Vector2.right, direction);
         transform.eulerAngles = new Vector3(0, 0, angle);
+    }
+
+    private void FlipSprite()
+    {
+        
     }
 
     public void Die()
