@@ -14,7 +14,7 @@ public class TopDownPlayer : MonoBehaviour, IKillable
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private int maxHealth = 100;
     public static bool PlayerDead = false;
-    private GameObject damageLight;
+    [SerializeField] private GameObject damageLight;
 
     void Start()
     {
