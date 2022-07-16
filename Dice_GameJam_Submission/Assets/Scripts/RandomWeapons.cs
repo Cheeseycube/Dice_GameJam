@@ -45,6 +45,7 @@ public class RandomWeapons : MonoBehaviour
         FireBall.SetActive(false);
         FindObjectOfType<FireMachineGun>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetMachineGun();
+        FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
     }
 
@@ -56,6 +57,7 @@ public class RandomWeapons : MonoBehaviour
         FireBall.SetActive(false);
         FindObjectOfType<FireRailGun>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetRailGun();
+        FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
     }
 
@@ -67,6 +69,7 @@ public class RandomWeapons : MonoBehaviour
         FireBall.SetActive(true);
         FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetFireBall();
+        FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
     }
 
@@ -74,6 +77,7 @@ public class RandomWeapons : MonoBehaviour
 
     private void SwapWeapons()
     {
+        FindObjectOfType<WeaponsUI>().EnableAnimations();
         switch (GetRandomNum())
         {
             case 0:
