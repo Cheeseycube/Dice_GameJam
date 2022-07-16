@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
     //IEnumerator SpawnTimer()
     //{
     //    yield return new WaitForSeconds(waitTime);
-    //    Debug.Log("Executing Spawn Enemy Wave");
+    //    // Debug.Log("Executing Spawn Enemy Wave");
     //    SpawnEnemyWave();
     //}
 
@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
             //switch (currentWave)
             //{
             //    case 1:
-            //        Debug.Log($"spawning wave {currentWave}");
+            //        // Debug.Log($"spawning wave {currentWave}");
             //        currentWave++;
             //        foreach (GameObject enemy in waveOfEnemies1)
             //        {
@@ -56,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
             //        }
             //        break;
             //    case 2:
-            //        Debug.Log($"spawning wave {currentWave}");
+            //        // Debug.Log($"spawning wave {currentWave}");
             //        currentWave++;
             //        foreach (GameObject enemy in waveOfEnemies2)
             //        {
@@ -64,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
             //        }
             //        break;
             //    case 3:
-            //        Debug.Log($"spawning wave {currentWave}");
+            //        // Debug.Log($"spawning wave {currentWave}");
             //        currentWave++;
             //        foreach (GameObject enemy in waveOfEnemies3)
             //        {
@@ -80,10 +80,10 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        Debug.Log($"Number of enemies: {numberOfEnemies}, enemy limit: {ENEMY_LIMIT}");
+        // Debug.Log($"Number of enemies: {numberOfEnemies}, enemy limit: {ENEMY_LIMIT}");
         if (numberOfEnemies < ENEMY_LIMIT)
         {
-            Debug.Log("Spawning enemy");
+            // Debug.Log("Spawning enemy");
             numberOfEnemies++;
             float randomXPosition = Random.Range(-10, 10);
             float randomYPosition = Random.Range(-10, 10);
