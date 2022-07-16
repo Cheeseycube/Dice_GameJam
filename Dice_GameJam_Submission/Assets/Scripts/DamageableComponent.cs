@@ -46,7 +46,7 @@ public class DamageableComponent : MonoBehaviour
 
     public float GetHealthPercentage()
     {
-        return (float)currentHealth/(float)maxHealth;
+        return (float)currentHealth/maxHealth;
     }
 
 }
