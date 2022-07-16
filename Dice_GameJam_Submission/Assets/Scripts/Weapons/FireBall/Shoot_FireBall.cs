@@ -29,6 +29,10 @@ public class Shoot_FireBall : MonoBehaviour
         }
     }
 
+    public void Set_mayFire(bool FireBool)
+    {
+        mayshoot = FireBool;
+    }
 
     IEnumerator FireRepeatTimer()
     {

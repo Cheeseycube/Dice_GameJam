@@ -32,7 +32,6 @@ public class FireRailGun : MonoBehaviour
     void Update()
     {
         FireGun();
-        print(mayFire);
     }
 
     private void FireGun()

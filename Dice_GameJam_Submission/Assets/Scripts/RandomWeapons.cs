@@ -30,13 +30,13 @@ public class RandomWeapons : MonoBehaviour
     private void SetWeapon()
     {
         timer += Time.deltaTime;
-        if (timer >= 3f)
+        if (timer >= 10f)
         {
             int prev = randomNum;
-            randomNum = Random.Range(0, 2);
+            randomNum = Random.Range(0, 3);
             while (randomNum == prev)
             {
-                randomNum = Random.Range(0, 2);
+                randomNum = Random.Range(0, 3);
             }
             maySwap = true;
             timer = 0f;
@@ -53,27 +53,36 @@ public class RandomWeapons : MonoBehaviour
                 break;
 
             case 1:
-                MachineGun.SetActive(false);
-                RailGun.SetActive(true);
-                FireBall.SetActive(false);
-                FindObjectOfType<FireRailGun>().Set_mayFire(true);
+                if (maySwap)
+                {
+                    StartCoroutine(EnableRailGun());
+                    maySwap = false;
+                }
                 break;
 
             case 2:
-                MachineGun.SetActive(false);
-                RailGun.SetActive(false);
-                FireBall.SetActive(true);
+                if (maySwap)
+                {
+                    StartCoroutine(EnableFireBall());
+                    maySwap = false;
+                }
                 break;
 
             default:
-                MachineGun.SetActive(true);
-                RailGun.SetActive(false);
-                FireBall.SetActive(false);
+                if (maySwap)
+                {
+                    StartCoroutine(EnableMachineGun());
+                    maySwap = false;
+                }
                 break;
 
         }
     }
 
+    public int GetRandomInt()
+    {
+        return randomNum;
+    }
     IEnumerator EnableMachineGun()
     {
         yield return new WaitForSeconds(0.1f);
@@ -81,5 +90,23 @@ public class RandomWeapons : MonoBehaviour
         RailGun.SetActive(false);
         FireBall.SetActive(false);
         FindObjectOfType<FireMachineGun>().Set_mayFire(true);
+    }
+
+    IEnumerator EnableRailGun()
+    {
+        yield return new WaitForSeconds(0.1f);
+        MachineGun.SetActive(false);
+        RailGun.SetActive(true);
+        FireBall.SetActive(false);
+        FindObjectOfType<FireRailGun>().Set_mayFire(true);
+    }
+
+    IEnumerator EnableFireBall()
+    {
+        yield return new WaitForSeconds(0.1f);
+        MachineGun.SetActive(false);
+        RailGun.SetActive(false);
+        FireBall.SetActive(true);
+        FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
     }
 }
