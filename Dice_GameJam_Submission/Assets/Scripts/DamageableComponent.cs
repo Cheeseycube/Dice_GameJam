@@ -44,4 +44,9 @@ public class DamageableComponent : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
     }
 
+    public float GetHealthPercentage()
+    {
+        return (float)currentHealth/(float)maxHealth;
+    }
+
 }

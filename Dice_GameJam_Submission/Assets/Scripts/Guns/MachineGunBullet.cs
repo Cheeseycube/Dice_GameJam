@@ -43,11 +43,10 @@ public class MachineGunBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
 
-         if(col.gameObject.TryGetComponent<DamageableComponent>(out DamageableComponent target))
+        if(col.gameObject.TryGetComponent<DamageableComponent>(out DamageableComponent target))
         {
             target.TakeDamage(damagePerHit);
         }
-
 
         // DO THIS LAST
         Destroy(gameObject);
