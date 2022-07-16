@@ -2377,6 +2377,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 139476944, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.315
+      objectReference: {fileID: 0}
+    - target: {fileID: 139476945, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.605
+      objectReference: {fileID: 0}
+    - target: {fileID: 139476945, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0.78
+      objectReference: {fileID: 0}
     - target: {fileID: 139476945, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 3
