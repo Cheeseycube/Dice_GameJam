@@ -48,6 +48,11 @@ public class FireMachineGun : MonoBehaviour
         }
     }
 
+    public void Set_mayFire(bool FireBool)
+    {
+        mayshoot = FireBool;
+    }
+
     IEnumerator FireRateTimer()
     {
         yield return new WaitForSeconds(0.1f);
