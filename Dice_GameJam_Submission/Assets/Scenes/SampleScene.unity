@@ -2377,6 +2377,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 139476945, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128885712, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8124033874532362276, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2424,6 +2432,10 @@ PrefabInstance:
     - target: {fileID: 8124033874532362287, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124033874744745491, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2136b934a89089946912546dd060cf1d, type: 3}
