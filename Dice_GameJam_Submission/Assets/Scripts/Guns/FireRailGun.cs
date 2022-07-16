@@ -10,6 +10,8 @@ public class FireRailGun : MonoBehaviour
 
     private float timer = 0f;
     [SerializeField] private ParticleSystem ChargeParticles;
+    [SerializeField] private Animator ChargeAnimator;
+    [SerializeField] private SpriteRenderer ChargeSprite;
 
     [SerializeField] int damagePerHit = 150;
 
@@ -35,10 +37,14 @@ public class FireRailGun : MonoBehaviour
         if (Input.GetMouseButton(0) && mayFire)
         {
             // start charging
+            ChargeSprite.enabled = true;
+            ChargeAnimator.SetBool("Begin Charging", true);
             timer += Time.deltaTime;
             if ((timer >= 1f))
             {
                 // charging finished
+                ChargeSprite.enabled = false;
+                ChargeAnimator.SetBool("Begin Charging", false);
                 mayFire = false;
                 gunCol.enabled = true;
                 myrend.enabled = true;
