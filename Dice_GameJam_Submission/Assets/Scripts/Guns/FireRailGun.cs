@@ -9,6 +9,8 @@ public class FireRailGun : MonoBehaviour
     Animator myanim;
     [SerializeField] private ParticleSystem ChargeParticles;
 
+    [SerializeField] int damagePerHit = 150;
+
     private bool mayFire = true;
     // Start is called before the first frame update
     void Start()
@@ -57,5 +59,14 @@ public class FireRailGun : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         mayFire = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.TryGetComponent<DamageableComponent>(out DamageableComponent target))
+        {
+            target.TakeDamage(damagePerHit);
+        }
+
     }
 }
