@@ -24,10 +24,10 @@ public class WeaponsUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetImage();
+        //SetImage();
     }
 
-    private void SetImage()
+    /*private void SetImage()
     {
         myImage.sprite = spriteList[i];
 
@@ -45,5 +45,18 @@ public class WeaponsUI : MonoBehaviour
             default:
                 break;
         }
+    }*/
+
+    public void SetMachineGun()
+    {
+        myImage.sprite = spriteList[0];
+    }
+    public void SetRailGun()
+    {
+        myImage.sprite = spriteList[1];
+    }
+    public void SetFireBall()
+    {
+        myImage.sprite = spriteList[2];
     }
 }
