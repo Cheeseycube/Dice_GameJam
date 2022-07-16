@@ -40,7 +40,6 @@ public class TopDownPlayer : MonoBehaviour, IKillable
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        FlipSprite();
     }
 
     private void FixedUpdate()
@@ -65,11 +64,6 @@ public class TopDownPlayer : MonoBehaviour, IKillable
         Vector2 direction = mousePosition - transform.position;
         angle = Vector2.SignedAngle(Vector2.right, direction);
         transform.eulerAngles = new Vector3(0, 0, angle);
-    }
-
-    private void FlipSprite()
-    {
-        
     }
 
     public void Die()
