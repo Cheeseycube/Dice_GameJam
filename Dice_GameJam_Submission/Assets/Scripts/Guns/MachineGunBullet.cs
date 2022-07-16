@@ -40,10 +40,10 @@ public class MachineGunBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if(col.gameObject.TryGetComponent<DamageableComponent>(out DamageableComponent target))
+        if(collision.gameObject.TryGetComponent<DamageableComponent>(out DamageableComponent target))
         {
             target.TakeDamage(damagePerHit);
         }
