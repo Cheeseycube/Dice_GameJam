@@ -214,7 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00802e1cee300a84fb02bd9345b0c98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChargeParticles: {fileID: 0}
   damagePerHit: 150
 --- !u!1 &1128885712
 GameObject:
@@ -677,10 +676,10 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8396226, g: 0.17030083, b: 0.17030083, a: 1}
-  m_Intensity: 4.98
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2.16
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 1b7a5a76
+  m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0

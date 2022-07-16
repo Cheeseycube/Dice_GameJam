@@ -7,8 +7,6 @@ public class FireRailGun : MonoBehaviour
     BoxCollider2D gunCol;
     SpriteRenderer myrend;
     Animator myanim;
-
-    private float timer = 0f;
     [SerializeField] private ParticleSystem ChargeParticles;
     [SerializeField] private Animator ChargeAnimator;
     [SerializeField] private SpriteRenderer ChargeSprite;
@@ -34,7 +32,7 @@ public class FireRailGun : MonoBehaviour
 
     private void FireGun()
     {
-        if (Input.GetMouseButton(0) && mayFire)
+        if (Input.GetMouseButtonDown(0) && mayFire)
         {
             // start charging
             ChargeSprite.enabled = true;
@@ -54,16 +52,9 @@ public class FireRailGun : MonoBehaviour
                 //StartCoroutine(ChargeUptimer());
             }
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            // charging canceled
-            timer = 0f;
-        }
-
     }
 
-    // unused at the moment
-    /*IEnumerator ChargeUptimer()
+    IEnumerator ChargeUptimer()
     {
         print("charging!");
         yield return new WaitForSeconds(0.5f);
@@ -72,21 +63,19 @@ public class FireRailGun : MonoBehaviour
         myanim.SetBool("RailGunFire", true);
         StartCoroutine(ShotDuration());
         StartCoroutine(FireRepeatTimer());
-    }*/
+    }
     IEnumerator ShotDuration()
     {
         yield return new WaitForSeconds(0.5f);
         gunCol.enabled = false;
         myrend.enabled = false;
         myanim.SetBool("RailGunFire", false);
-        StartCoroutine(FireRepeatTimer());
     }
 
    IEnumerator FireRepeatTimer()
     {
         yield return new WaitForSeconds(1f);
         mayFire = true;
-        timer = 0f;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
