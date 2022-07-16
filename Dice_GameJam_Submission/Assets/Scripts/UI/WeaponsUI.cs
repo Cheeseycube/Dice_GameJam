@@ -96,6 +96,12 @@ public class WeaponsUI : MonoBehaviour
         myAnim.SetBool("Dice Rolling", false);
     }
 
+    public void SetEndingFlash(bool value)
+    {
+        myAnim.SetBool("Dice Rolling", false);
+        myAnim.SetBool("Ending Flash", value);
+    }
+
     public void DisableAnimations()
     {
         myAnim.enabled = false;
