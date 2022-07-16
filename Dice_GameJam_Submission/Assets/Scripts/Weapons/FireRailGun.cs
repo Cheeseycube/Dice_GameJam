@@ -24,12 +24,15 @@ public class FireRailGun : MonoBehaviour
         myanim = GetComponent<Animator>();
         gunCol = GetComponent<BoxCollider2D>();
         gunCol.enabled = false;
+        //myanim.keepAnimatorControllerStateOnDisable = false;
     }
+
 
     // Update is called once per frame
     void Update()
     {
         FireGun();
+        print(mayFire);
     }
 
     private void FireGun()
@@ -90,6 +93,17 @@ public class FireRailGun : MonoBehaviour
         mayFire = true;
         timer = 0f;
     }
+
+    public void Set_mayFire(bool FireBool)
+    {
+        mayFire = FireBool;
+    }
+
+    public void ResetAnimation()
+    {
+        myanim.SetBool("RailGunFire", false);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {

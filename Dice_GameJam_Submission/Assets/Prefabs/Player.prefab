@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0.51359504, b: 0, a: 1}
   m_Intensity: 5.66
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 0000000047770b881311558b
+  m_ApplyToSortingLayers: 47770b881311558b
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -4830,7 +4830,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5226,7 +5226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2011799798
 Transform:
   m_ObjectHideFlags: 0
@@ -5320,7 +5320,7 @@ GameObject:
   - component: {fileID: 8124033874532362280}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5473,7 +5473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8124033874744745484
 Transform:
   m_ObjectHideFlags: 0
