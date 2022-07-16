@@ -28,7 +28,7 @@ public class DamageableComponent : MonoBehaviour
     public void TakeDamage(int damage)
     {
         this.currentHealth -= damage;
-        if(currentHealth < 0 && !dead)
+        if(currentHealth <= 0 && !dead)
         {
             this.dead = true;
             parent.Die(); 
