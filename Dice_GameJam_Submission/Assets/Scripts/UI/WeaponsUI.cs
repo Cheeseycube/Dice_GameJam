@@ -64,13 +64,45 @@ public class WeaponsUI : MonoBehaviour
 
     public void SwappingFireBall()
     {
-        // myAnim.ResetTrigger("Machine Gun Changing");
-        //myAnim.SetTrigger("Fire Changing");
+        myAnim.SetBool("Machine Gun Changing", false);
+        myAnim.SetBool("Rail Gun Changing", false);
+        myAnim.SetBool("Fire Changing", true);
     }
 
     public void SwappingMachineGun()
     {
-        myAnim.ResetTrigger("Fire Changing");
-        myAnim.SetTrigger("Machine Gun Changing");
+        myAnim.SetBool("Fire Changing", false);
+        myAnim.SetBool("Rail Gun Changing", false);
+        myAnim.SetBool("Machine Gun Changing", true);
+    }
+
+    public void SwappingRailGun()
+    {
+        myAnim.SetBool("Fire Changing", false);
+        myAnim.SetBool("Machine Gun Changing", false);
+        myAnim.SetBool("Rail Gun Changing", true);
+    }
+
+    public void DiceRolling()
+    {
+        myAnim.SetBool("Fire Changing", false);
+        myAnim.SetBool("Machine Gun Changing", false);
+        myAnim.SetBool("Rail Gun Changing", false);
+        myAnim.SetBool("Dice Rolling", true);
+    }
+
+    public void NoDiceRolling()
+    {
+        myAnim.SetBool("Dice Rolling", false);
+    }
+
+    public void DisableAnimations()
+    {
+        myAnim.enabled = false;
+    }
+
+    public void EnableAnimations()
+    {
+        myAnim.enabled = true;
     }
 }
