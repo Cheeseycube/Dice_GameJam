@@ -56,8 +56,6 @@ public class RandomWeapons : MonoBehaviour
         FireBall.SetActive(false);
         FindObjectOfType<FireRailGun>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetRailGun();
-        //timer = 0f;
-        //swappingWeapons = false;
         maySwap = true;
     }
 
@@ -69,8 +67,6 @@ public class RandomWeapons : MonoBehaviour
         FireBall.SetActive(true);
         FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetFireBall();
-        //timer = 0f;
-        //swappingWeapons = false;
         maySwap = true;
     }
 
@@ -81,18 +77,22 @@ public class RandomWeapons : MonoBehaviour
         switch (GetRandomNum())
         {
             case 0:
+                FindObjectOfType<WeaponsUI>().SwappingFireBall();
                 StartCoroutine(EnableMachineGun()); 
                 break;
 
             case 1:
+                FindObjectOfType<WeaponsUI>().SwappingFireBall();
                 StartCoroutine(EnableRailGun());
                 break;
 
             case 2:
+                FindObjectOfType<WeaponsUI>().SwappingFireBall();
                 StartCoroutine(EnableFireBall());
                 break;
 
             default:
+                FindObjectOfType<WeaponsUI>().SwappingFireBall();
                 StartCoroutine(EnableMachineGun());
                 break;
 

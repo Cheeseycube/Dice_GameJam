@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WeaponsUI : MonoBehaviour
 {
     Image myImage;
+    Animator myAnim;
     [SerializeField] private Sprite MachineGun;
     [SerializeField] private Sprite RailGun;
     [SerializeField] private Sprite FireBall;
@@ -15,6 +16,7 @@ public class WeaponsUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myAnim = GetComponent<Animator>();
         myImage = GetComponent<Image>();
         spriteList.Add(MachineGun);
         spriteList.Add(RailGun);
@@ -58,5 +60,10 @@ public class WeaponsUI : MonoBehaviour
     public void SetFireBall()
     {
         myImage.sprite = spriteList[2];
+    }
+
+    public void SwappingFireBall()
+    {
+        myAnim.SetTrigger("Fire Changing");
     }
 }
