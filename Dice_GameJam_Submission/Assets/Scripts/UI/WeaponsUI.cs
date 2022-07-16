@@ -64,6 +64,13 @@ public class WeaponsUI : MonoBehaviour
 
     public void SwappingFireBall()
     {
-        myAnim.SetTrigger("Fire Changing");
+        // myAnim.ResetTrigger("Machine Gun Changing");
+        //myAnim.SetTrigger("Fire Changing");
+    }
+
+    public void SwappingMachineGun()
+    {
+        myAnim.ResetTrigger("Fire Changing");
+        myAnim.SetTrigger("Machine Gun Changing");
     }
 }

@@ -77,7 +77,7 @@ public class RandomWeapons : MonoBehaviour
         switch (GetRandomNum())
         {
             case 0:
-                FindObjectOfType<WeaponsUI>().SwappingFireBall();
+                FindObjectOfType<WeaponsUI>().SwappingMachineGun();
                 StartCoroutine(EnableMachineGun()); 
                 break;
 
@@ -92,7 +92,7 @@ public class RandomWeapons : MonoBehaviour
                 break;
 
             default:
-                FindObjectOfType<WeaponsUI>().SwappingFireBall();
+                FindObjectOfType<WeaponsUI>().SwappingMachineGun();
                 StartCoroutine(EnableMachineGun());
                 break;
 
