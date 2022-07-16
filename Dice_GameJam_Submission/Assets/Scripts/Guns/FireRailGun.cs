@@ -58,6 +58,8 @@ public class FireRailGun : MonoBehaviour
         {
             // charging canceled
             timer = 0f;
+            ChargeSprite.enabled = false;
+            ChargeAnimator.SetBool("Begin Charging", false);
         }
 
     }
