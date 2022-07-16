@@ -36,11 +36,6 @@ public class TopDownPlayer : MonoBehaviour, IKillable
         myrend.sprite = spriteList[1];
     }
 
-    private void Awake()
-    {
-        
-    }
-
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
