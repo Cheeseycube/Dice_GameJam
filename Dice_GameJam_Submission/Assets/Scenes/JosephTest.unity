@@ -2209,6 +2209,10 @@ MonoBehaviour:
   MachineGun: {fileID: 0}
   RailGun: {fileID: 0}
   FireBall: {fileID: 0}
+  initialWaitTime: 10
+  diceRollTime: 3
+  flashingTime: 3
+  whiteFlashTime: 0.5
 --- !u!4 &1445766762
 Transform:
   m_ObjectHideFlags: 0
@@ -21415,6 +21419,14 @@ PrefabInstance:
     - target: {fileID: 2838272041542098373, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569662129845085060, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569662129845085060, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6391802883569643686, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
       propertyPath: m_Name
