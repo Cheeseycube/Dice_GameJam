@@ -48,7 +48,7 @@ public class FireRailGun : MonoBehaviour
                 mayFire = false;
                 gunCol.enabled = true;
                 myrend.enabled = true;
-                myanim.SetBool("RainGunFire", true);
+                myanim.SetBool("RailGunFire", true);
                 StartCoroutine(ShotDuration());
                 //StartCoroutine(FireRepeatTimer());
                 //StartCoroutine(ChargeUptimer());
