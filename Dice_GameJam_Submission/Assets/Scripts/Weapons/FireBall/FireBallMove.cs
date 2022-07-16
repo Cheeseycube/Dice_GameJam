@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class FireBallMove : MonoBehaviour
 {
+    ParticleSystem ExplosionParticles;
+    SpriteRenderer myrend;
+    BoxCollider2D myCollider;
     [SerializeField] private GameObject FirePoint;
 
     private float moveSpeed = 0.4f;
     // Start is called before the first frame update
     void Start()
     {
+        myCollider = GetComponent<BoxCollider2D>();
+        myrend = GetComponent<SpriteRenderer>();
+        ExplosionParticles = GetComponent<ParticleSystem>();
         transform.Rotate(new Vector3(0f, 0f, FirePoint.transform.rotation.z));
         StartCoroutine(lifetimer());
     }
@@ -38,9 +44,19 @@ public class FireBallMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!collision.CompareTag("Player"))
+        {
+            StartCoroutine(DestroyItself());
+        }
 
-        // DO THIS LAST
-        Destroy(gameObject);
+    }
 
+    IEnumerator DestroyItself()
+    {
+        Destroy(myrend);
+        Destroy(myCollider);
+        ExplosionParticles.Play();
+        yield return new WaitForSeconds(0.3f);
+        Destroy(this.gameObject);
     }
 }
