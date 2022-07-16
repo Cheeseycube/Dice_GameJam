@@ -15,7 +15,10 @@ public class RandomWeapons : MonoBehaviour
     private bool maySwap = true;
     private bool swappingWeapons = false;
 
+    private int CurrentWeapon = 0;
+
     private float waitTime = 3f;
+    private float diceRollTime = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,6 @@ public class RandomWeapons : MonoBehaviour
     {
         if (maySwap)
         {
-            print("swapping");
             maySwap = false;
             StartCoroutine(WeaponTimer());
         }
@@ -39,11 +41,12 @@ public class RandomWeapons : MonoBehaviour
     // use the coroutines to start off the animations
     IEnumerator EnableMachineGun()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(diceRollTime);
         MachineGun.SetActive(true);
         RailGun.SetActive(false);
         FireBall.SetActive(false);
         FindObjectOfType<FireMachineGun>().Set_mayFire(true);
+        FindObjectOfType<WeaponsUI>().NoDiceRolling();
         FindObjectOfType<WeaponsUI>().SetMachineGun();
         FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
@@ -51,56 +54,96 @@ public class RandomWeapons : MonoBehaviour
 
     IEnumerator EnableRailGun()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(diceRollTime);
         MachineGun.SetActive(false);
         RailGun.SetActive(true);
         FireBall.SetActive(false);
         FindObjectOfType<FireRailGun>().Set_mayFire(true);
+        FindObjectOfType<WeaponsUI>().NoDiceRolling();
         FindObjectOfType<WeaponsUI>().SetRailGun();
         FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
     }
 
-    IEnumerator EnableFireBall()
+    IEnumerator SwappingRailGunAnim()
     {
         yield return new WaitForSeconds(waitTime);
+        FindObjectOfType<WeaponsUI>().DiceRolling();
+        StartCoroutine(EnableRailGun());
+    }
+    IEnumerator SwappingMachineGunAnim()
+    {
+        yield return new WaitForSeconds(waitTime);
+        FindObjectOfType<WeaponsUI>().DiceRolling();
+        StartCoroutine(EnableMachineGun());
+    }
+    IEnumerator SwappingFireBallAnim()
+    {
+        yield return new WaitForSeconds(waitTime);
+        FindObjectOfType<WeaponsUI>().DiceRolling();
+        StartCoroutine(EnableFireBall());
+    }
+
+    IEnumerator EnableFireBall()
+    {
+        yield return new WaitForSeconds(diceRollTime);
         MachineGun.SetActive(false);
         RailGun.SetActive(false);
         FireBall.SetActive(true);
         FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
+        FindObjectOfType<WeaponsUI>().NoDiceRolling();
         FindObjectOfType<WeaponsUI>().SetFireBall();
         FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
     }
 
-    // Animations will be put in later?
 
     private void SwapWeapons()
     {
         FindObjectOfType<WeaponsUI>().EnableAnimations();
-        switch (GetRandomNum())
+        switch (CurrentWeapon)
         {
             case 0:
                 FindObjectOfType<WeaponsUI>().SwappingMachineGun();
-                StartCoroutine(EnableMachineGun()); 
                 break;
 
             case 1:
-                FindObjectOfType<WeaponsUI>().SwappingFireBall();
-                StartCoroutine(EnableRailGun());
+                FindObjectOfType<WeaponsUI>().SwappingRailGun();
                 break;
 
             case 2:
                 FindObjectOfType<WeaponsUI>().SwappingFireBall();
-                StartCoroutine(EnableFireBall());
                 break;
 
             default:
                 FindObjectOfType<WeaponsUI>().SwappingMachineGun();
-                StartCoroutine(EnableMachineGun());
                 break;
 
         }
+        switch (GetRandomNum())
+        {
+            case 0:
+                CurrentWeapon = 0;
+                StartCoroutine(SwappingMachineGunAnim());
+                break;
+
+            case 1:
+                CurrentWeapon = 1;
+                StartCoroutine(SwappingRailGunAnim());
+                break;
+
+            case 2:
+                CurrentWeapon = 2;
+                StartCoroutine(SwappingFireBallAnim());
+                break;
+
+            default:
+                CurrentWeapon = 0;
+                StartCoroutine(SwappingMachineGunAnim());
+                break;
+
+        }
+
     }
 
 
@@ -118,6 +161,7 @@ public class RandomWeapons : MonoBehaviour
         {
             randomNum = Random.Range(0, 3);
         }
+        //prevWeapon = randomNum;
 
         return randomNum;
     }
