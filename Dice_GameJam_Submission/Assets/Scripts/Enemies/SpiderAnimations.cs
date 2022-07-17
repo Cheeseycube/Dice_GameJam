@@ -23,7 +23,6 @@ public class SpiderAnimations : MonoBehaviour
     {
         if (GetDistanceFromPlayer() <= 5f)
         {
-            print("attaaaaack");
             myAnim.SetBool("attacking", true);
         }
         else
