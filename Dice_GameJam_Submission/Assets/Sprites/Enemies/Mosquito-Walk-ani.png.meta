@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 9aa0bfc4375970c45bf6e006fa5be0ca
+guid: 8b8f097f21e520947806d2a3d5a75770
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 2172612288648019454
-    second: Spider Idle-Sheet_0
-  - first:
-      213: 4065976155393217044
-    second: Spider Idle-Sheet_1
-  - first:
-      213: 562993500125306096
-    second: Spider Idle-Sheet_2
-  - first:
-      213: -6742570804297513065
-    second: Spider Idle-Sheet_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spider Idle-Sheet_0
+      name: Mosquito-Walk-ani_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 80
-        height: 64
+        x: 4
+        y: 14
+        width: 58
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +117,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efd73839d5ba62e10800000000000000
-      internalID: 2172612288648019454
+      spriteID: 39bbf32cc7f162320800000000000000
+      internalID: 2532746461137845139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider Idle-Sheet_1
+      name: Mosquito-Walk-ani_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 80
-        height: 64
+        x: 69
+        y: 14
+        width: 58
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 412db6755cf3d6830800000000000000
-      internalID: 4065976155393217044
+      spriteID: 58e38f14cb9e4f420800000000000000
+      internalID: 2663010274452717189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider Idle-Sheet_2
+      name: Mosquito-Walk-ani_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 80
-        height: 64
+        x: 132
+        y: 14
+        width: 60
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fc92d10b9720d700800000000000000
-      internalID: 562993500125306096
+      spriteID: 6995bb8cbc825feb0800000000000000
+      internalID: -4686794981497939562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider Idle-Sheet_3
+      name: Mosquito-Walk-ani_3
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 80
-        height: 64
+        x: 199
+        y: 14
+        width: 56
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +180,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7974de0c3939d62a0800000000000000
-      internalID: -6742570804297513065
+      spriteID: 3e41059764626c980800000000000000
+      internalID: -8519079560999856925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito-Walk-ani_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 14
+        width: 58
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ded08998c384fc0800000000000000
+      internalID: -3510489347876066018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito-Walk-ani_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 14
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acafce064ece3cb10800000000000000
+      internalID: 2000703125105474250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito-Walk-ani_6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 14
+        width: 58
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2172abefafa23c5e0800000000000000
+      internalID: -1890620161061673198
       vertices: []
       indices: 
       edges: []
