@@ -7,11 +7,11 @@ public class PlayerAnimations : MonoBehaviour
     Animator myanim;
     Quaternion currentRotation;
     Vector3 currentEulerAngles;
-    [SerializeField] AudioClip flapSound;
-    [SerializeField] float flapVol = 10f;
+    AudioSource flapSoundSource;
     // Start is called before the first frame update
     void Start()
     {
+        flapSoundSource = GetComponent<AudioSource>();
         myanim = GetComponent<Animator>();
     }
 
@@ -22,7 +22,7 @@ public class PlayerAnimations : MonoBehaviour
 
     IEnumerator LoopWings()
     {
-        AudioSource.PlayClipAtPoint(flapSound, this.gameObject.transform.position, flapVol);
+        flapSoundSource.Play(0);
         yield return new WaitForSeconds(5);
         StartCoroutine(LoopWings());
     }
