@@ -10,11 +10,13 @@ public class TestEnemy : MonoBehaviour, IKillable
     BoxCollider2D boxCollider;
     [SerializeField] int damagePerHit = 10;
 
+    Rigidbody2D rb;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         damageableComponent = this.gameObject.AddComponent<DamageableComponent>();
 
     }
@@ -22,8 +24,9 @@ public class TestEnemy : MonoBehaviour, IKillable
     // Update is called once per frame
     void Update()
     {
-
+       
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
