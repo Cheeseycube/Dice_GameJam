@@ -21,8 +21,9 @@ public class SpiderAnimations : MonoBehaviour
 
     private void Attack()
     {
-        if (GetDistanceFromPlayer() <= 3f)
+        if (GetDistanceFromPlayer() <= 5f)
         {
+            print("attaaaaack");
             myAnim.SetBool("attacking", true);
         }
         else
