@@ -34,11 +34,12 @@ public class ScytheAttack : MonoBehaviour
         {
             mayAttack = false;
             // enable collider
-            ScytheCol.SetActive(true);
+            //ScytheCol.SetActive(true);
             myanim.SetBool("Scythe Attacking", true);
             StartCoroutine(TransformScaleTimer());
             StartCoroutine(AttackTimer());
             StartCoroutine(AttackRateTimer());
+            StartCoroutine(ColliderTimerStart());
         }
     }
 
@@ -48,11 +49,22 @@ public class ScytheAttack : MonoBehaviour
         mayAttack = true;
     }
 
+    IEnumerator ColliderTimer()
+    {
+        yield return new WaitForSeconds(0.2f);
+        ScytheCol.SetActive(false);
+    }
+
+    IEnumerator ColliderTimerStart()
+    {
+        yield return new WaitForSeconds(0.7f);
+        ScytheCol.SetActive(true);
+        StartCoroutine(ColliderTimer());
+    }
     IEnumerator AttackTimer()
     {
         yield return new WaitForSeconds(1f);
         myanim.SetBool("Scythe Attacking", false);
-        ScytheCol.SetActive(false);
         gameObject.transform.localPosition = new Vector2(4.22f, -1.67f);
         gameObject.transform.localScale = new Vector2(2, 2);
     }

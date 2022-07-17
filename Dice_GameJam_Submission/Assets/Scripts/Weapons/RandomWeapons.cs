@@ -9,6 +9,7 @@ public class RandomWeapons : MonoBehaviour
     [SerializeField] private GameObject RailGun;
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject Scythe;
+    [SerializeField] private GameObject ScytheCol;
 
     private int randomNum = 0;
     private int prevWeapon = 0;
@@ -50,6 +51,7 @@ public class RandomWeapons : MonoBehaviour
         RailGun.SetActive(false);
         FireBall.SetActive(false);
         Scythe.SetActive(false);
+        ScytheCol.SetActive(false);
         FindObjectOfType<FireMachineGun>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetMachineGun();
@@ -64,6 +66,7 @@ public class RandomWeapons : MonoBehaviour
         RailGun.SetActive(true);
         FireBall.SetActive(false);
         Scythe.SetActive(false);
+        ScytheCol.SetActive(false);
         FindObjectOfType<FireRailGun>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetRailGun();
@@ -78,6 +81,7 @@ public class RandomWeapons : MonoBehaviour
         RailGun.SetActive(false);
         FireBall.SetActive(true);
         Scythe.SetActive(false);
+        ScytheCol.SetActive(false);
         FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetFireBall();
@@ -92,6 +96,7 @@ public class RandomWeapons : MonoBehaviour
         RailGun.SetActive(false);
         FireBall.SetActive(false);
         Scythe.SetActive(true);
+        ScytheCol.SetActive(false);
         FindObjectOfType<ScytheAttack>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetScythe();
