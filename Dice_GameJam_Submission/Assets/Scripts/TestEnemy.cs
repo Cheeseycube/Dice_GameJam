@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class TestEnemy : MonoBehaviour, IKillable
 {
@@ -8,16 +10,19 @@ public class TestEnemy : MonoBehaviour, IKillable
     BoxCollider2D boxCollider;
     [SerializeField] int damagePerHit = 10;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         damageableComponent = this.gameObject.AddComponent<DamageableComponent>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -6,24 +6,18 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
-    [SerializeField] GameObject[] enemies;
+    [SerializeField] GameObject enemyType;
     
     private float waitTime = 10f;
     private float minTime = 2f;
-    private const int ENEMY_LIMIT = 50;
+    [SerializeField] int enemyLimit = 15;
     private int numberOfEnemies = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemy(enemy));
+        StartCoroutine(SpawnEnemy(enemyType));
         StartCoroutine(DecreaseSpawnDelay());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     private IEnumerator DecreaseSpawnDelay()
@@ -32,26 +26,23 @@ public class EnemySpawner : MonoBehaviour
 
         if (waitTime > minTime)
         {
-            Debug.Log($"Decreasing waittime");
-            Debug.Log($"old waittime: {waitTime}");
             waitTime--;
-            Debug.Log($"new waittime: {waitTime}");
         }
         StartCoroutine(DecreaseSpawnDelay());
     }
 
-    private IEnumerator SpawnEnemy(GameObject enemy)
+    private IEnumerator SpawnEnemy(GameObject enemyType)
     {
         yield return new WaitForSeconds(waitTime);
         
-        if (numberOfEnemies < ENEMY_LIMIT)
+        if (numberOfEnemies < enemyLimit)
         {
             numberOfEnemies++;
             float randomXPosition = Random.Range(-10, 10);
             float randomYPosition = Random.Range(-10, 10);
             var spawnPosition = new Vector3(randomXPosition, randomYPosition, 0);
-            GameObject newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
-            StartCoroutine(SpawnEnemy(enemy));
+            GameObject newEnemy = Instantiate(enemyType, spawnPosition, Quaternion.identity);
+            StartCoroutine(SpawnEnemy(enemyType));
         }
     }
 }

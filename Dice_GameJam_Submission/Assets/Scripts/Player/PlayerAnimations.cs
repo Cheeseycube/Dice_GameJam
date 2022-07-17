@@ -20,7 +20,7 @@ public class PlayerAnimations : MonoBehaviour
         //currentEulerAngles = transform.eulerAngles;
         SetAnimations();
         FlipSprite();
-        print(transform.eulerAngles.z);
+        //print(transform.eulerAngles.z);
     }
     // between 145 and -145 is facing left
     private void SetAnimations()
