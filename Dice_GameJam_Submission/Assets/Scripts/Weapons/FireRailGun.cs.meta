@@ -3,7 +3,11 @@ guid: 00802e1cee300a84fb02bd9345b0c98f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ChargeParticles: {instanceID: 0}
+  - ChargeAnimator: {instanceID: 0}
+  - ChargeSprite: {instanceID: 0}
+  - fireSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -8,20 +8,10 @@ public class FireMachineGun : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject FirePoint;
     [SerializeField] public Light2D MuzzleFlashLight;
+    [SerializeField] private AudioClip fireSound;
 
     private bool mayshoot = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void FixedUpdate()
     {
@@ -41,6 +31,7 @@ public class FireMachineGun : MonoBehaviour
     {
         if (mayshoot)
         {
+            AudioSource.PlayClipAtPoint(fireSound, this.transform.position);
             mayshoot = false;
             Instantiate(bulletPrefab, FirePoint.transform.position, FirePoint.transform.rotation);
             StartCoroutine(FireRateTimer());
