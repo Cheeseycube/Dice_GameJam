@@ -426,6 +426,7 @@ GameObject:
   - component: {fileID: 585092267}
   - component: {fileID: 585092266}
   - component: {fileID: 585092265}
+  - component: {fileID: 585092268}
   m_Layer: 5
   m_Name: sound button
   m_TagString: Untagged
@@ -449,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 423, y: -194}
+  m_AnchoredPosition: {x: 497, y: -268}
   m_SizeDelta: {x: 315, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &585092265
@@ -495,7 +496,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 585092266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952349468}
+        m_TargetAssemblyTypeName: BackgroundMusic, Assembly-CSharp
+        m_MethodName: AudioToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 585092268}
+        m_TargetAssemblyTypeName: ButtonImage, Assembly-CSharp
+        m_MethodName: imageSwap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &585092266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +559,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585092263}
   m_CullTransparentMesh: 1
+--- !u!114 &585092268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585092263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a437fd6b923214d98e20cc40511c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteStart: {fileID: 21300000, guid: f83c108ce225307448194b52fbf4d14f, type: 3}
+  SpriteSwap: {fileID: 21300000, guid: 7128c0d44c441b6418bf019aadfba53b, type: 3}
+  Object: {fileID: 585092263}
 --- !u!1 &627289652
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -313, y: 154}
+  m_AnchoredPosition: {x: -400, y: 204}
   m_SizeDelta: {x: 650, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627289654
@@ -897,7 +937,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce9ed270648c57047a9209e39ca70ee1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1216,7 +1256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286, y: -177}
+  m_AnchoredPosition: {x: -373, y: -260}
   m_SizeDelta: {x: 448, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820865948
@@ -1402,7 +1442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286, y: -78}
+  m_AnchoredPosition: {x: -373, y: -161}
   m_SizeDelta: {x: 448, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1931540342
