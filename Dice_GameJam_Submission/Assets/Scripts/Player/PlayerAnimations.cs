@@ -8,6 +8,7 @@ public class PlayerAnimations : MonoBehaviour
     Quaternion currentRotation;
     Vector3 currentEulerAngles;
     [SerializeField] AudioClip flapSound;
+    [SerializeField] float flapVol = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class PlayerAnimations : MonoBehaviour
 
     IEnumerator LoopWings()
     {
-        AudioSource.PlayClipAtPoint(flapSound, this.gameObject.transform.position);
+        AudioSource.PlayClipAtPoint(flapSound, this.gameObject.transform.position, flapVol);
         yield return new WaitForSeconds(5);
         StartCoroutine(LoopWings());
     }
