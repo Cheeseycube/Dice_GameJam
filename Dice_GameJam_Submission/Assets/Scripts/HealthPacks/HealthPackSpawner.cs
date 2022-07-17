@@ -7,7 +7,7 @@ public class HealthPackSpawner : MonoBehaviour
     [SerializeField] private GameObject healthpack;
     [SerializeField] int healthpackLimit = 3;
     [SerializeField] private float waitTime = 5f;
-    private int numHealthPacks = 0;
+    public int numHealthPacks = 0;
     // Start is called before the first frame update
     void Start()
     {

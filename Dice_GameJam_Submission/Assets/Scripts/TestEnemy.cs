@@ -9,6 +9,7 @@ public class TestEnemy : MonoBehaviour, IKillable
     DamageableComponent damageableComponent;
     BoxCollider2D boxCollider;
     [SerializeField] int damagePerHit = 10;
+    [SerializeField] private NavMeshAgent navMeshobj;
 
     Rigidbody2D rb;
 
@@ -24,9 +25,20 @@ public class TestEnemy : MonoBehaviour, IKillable
     // Update is called once per frame
     void Update()
     {
-       
+        FlipSprite();
     }
 
+    private void FlipSprite()
+    {
+        if (navMeshobj.velocity.x < 0)
+        {
+            transform.localScale = new Vector2(2, gameObject.transform.localScale.y);
+        }
+        else if (navMeshobj.velocity.x > 0)
+        {
+            transform.localScale = new Vector2(-2, gameObject.transform.localScale.y);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
