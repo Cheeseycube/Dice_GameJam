@@ -42,4 +42,5 @@ public class GameManager : MonoBehaviour
         DeathCanvas.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
