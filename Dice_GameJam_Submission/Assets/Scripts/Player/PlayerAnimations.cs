@@ -30,11 +30,19 @@ public class PlayerAnimations : MonoBehaviour
         {
             myanim.SetBool("Facing Side", true);
             myanim.SetBool("Facing Front", false);
+            myanim.SetBool("Facing Back", false);
         }
+       /* else  if ((transform.eulerAngles.z <= 150) && (transform.eulerAngles.z >= 0))
+        {
+            myanim.SetBool("Facing Side", false);
+            myanim.SetBool("Facing Front", false);
+            myanim.SetBool("Facing Back", true);
+        }*/
         else
         {
             myanim.SetBool("Facing Side", false);
             myanim.SetBool("Facing Front", true);
+            myanim.SetBool("Facing Back", false);
         }
     }
 
