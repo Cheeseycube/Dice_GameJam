@@ -1394,6 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flapSound: {fileID: 8300000, guid: 206ad62cf843dd144a3ad639904056b2, type: 3}
+  flapVol: 10
 --- !u!1 &4747851119695452457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,7 +1820,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1955,7 +1956,7 @@ MonoBehaviour:
   m_Follow: {fileID: 4747851119221445772}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
