@@ -12,7 +12,7 @@ public class PlayerAnimations : MonoBehaviour
     void Start()
     {
         myanim = GetComponent<Animator>();
-        AudioSource.PlayClipAtPoint(flapSound, this.transform.position);
+        StartCoroutine(LoopWings());
     }
 
     IEnumerator LoopWings()

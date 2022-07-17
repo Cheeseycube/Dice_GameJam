@@ -1976,14 +1976,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 473239823, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 5e2de1d758e3dc740a803998d3e1dc1c, type: 2}
-    - target: {fileID: 909581739, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
-      propertyPath: flapSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 206ad62cf843dd144a3ad639904056b2, type: 3}
     - target: {fileID: 2838272041542098373, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2028,17 +2020,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3557171579395169375, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: b40e23b7189dcda47b34fe5c25870741, type: 3}
     - target: {fileID: 6391802883569643686, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
       propertyPath: m_Name
       value: Required Components
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391802883569643686, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
