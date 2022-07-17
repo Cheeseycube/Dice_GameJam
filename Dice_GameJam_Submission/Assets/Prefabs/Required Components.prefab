@@ -284,6 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1988151450}
+  - component: {fileID: 1988151451}
   m_Layer: 0
   m_Name: GameSession
   m_TagString: Untagged
@@ -306,6 +307,18 @@ Transform:
   m_Father: {fileID: 2838272041542098373}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988151451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988151449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84f0c9beb6806d44a36d3129c0caceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2197035848094383715
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,9 +443,6 @@ MonoBehaviour:
   movementSpeed: 8
   maxHealth: 100
   damageLight: {fileID: 5722500032614467970}
-  FacingRight: {fileID: 21300000, guid: 19970015ccce8b5428a3d0916c5663d0, type: 3}
-  FacingForwards: {fileID: 21300000, guid: a83f8ee3304280a41ae98ea546490cfa, type: 3}
-  FacingBackwards: {fileID: 21300000, guid: 90dfbf235f3e3f4409287371347c2935, type: 3}
 --- !u!114 &909581739
 MonoBehaviour:
   m_ObjectHideFlags: 0
