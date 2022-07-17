@@ -8,6 +8,7 @@ public class ScytheAttack : MonoBehaviour
     [SerializeField] private GameObject ScytheCol;
     Animator myanim;
     [SerializeField] private AudioClip slashSound;
+    [SerializeField] private float ScytheVolume = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,7 @@ public class ScytheAttack : MonoBehaviour
             mayAttack = false;
             // enable collider
             //ScytheCol.SetActive(true);
-            AudioSource.PlayClipAtPoint(slashSound, this.transform.position, 1f);
+            AudioSource.PlayClipAtPoint(slashSound, this.transform.position, ScytheVolume);
             myanim.SetBool("Scythe Attacking", true);
             StartCoroutine(TransformScaleTimer());
             StartCoroutine(AttackTimer());
