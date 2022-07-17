@@ -49,6 +49,7 @@ public class RandomWeapons : MonoBehaviour
         MachineGun.SetActive(true);
         RailGun.SetActive(false);
         FireBall.SetActive(false);
+        Scythe.SetActive(false);
         FindObjectOfType<FireMachineGun>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetMachineGun();
@@ -62,6 +63,7 @@ public class RandomWeapons : MonoBehaviour
         MachineGun.SetActive(false);
         RailGun.SetActive(true);
         FireBall.SetActive(false);
+        Scythe.SetActive(false);
         FindObjectOfType<FireRailGun>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetRailGun();
@@ -75,9 +77,24 @@ public class RandomWeapons : MonoBehaviour
         MachineGun.SetActive(false);
         RailGun.SetActive(false);
         FireBall.SetActive(true);
+        Scythe.SetActive(false);
         FindObjectOfType<Shoot_FireBall>().Set_mayFire(true);
         FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
         FindObjectOfType<WeaponsUI>().SetFireBall();
+        FindObjectOfType<WeaponsUI>().DisableAnimations();
+        maySwap = true;
+    }
+
+    IEnumerator EnableScythe()
+    {
+        yield return new WaitForSeconds(whiteFlashTime);
+        MachineGun.SetActive(false);
+        RailGun.SetActive(false);
+        FireBall.SetActive(false);
+        Scythe.SetActive(true);
+        FindObjectOfType<ScytheAttack>().Set_mayFire(true);
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(false);
+        FindObjectOfType<WeaponsUI>().SetScythe();
         FindObjectOfType<WeaponsUI>().DisableAnimations();
         maySwap = true;
     }
@@ -99,6 +116,12 @@ public class RandomWeapons : MonoBehaviour
         yield return new WaitForSeconds(flashingTime);
         FindObjectOfType<WeaponsUI>().DiceRolling();
         StartCoroutine(FireBallEndingAnim());
+    }
+    IEnumerator SwappingScytheAnim()
+    {
+        yield return new WaitForSeconds(flashingTime);
+        FindObjectOfType<WeaponsUI>().DiceRolling();
+        StartCoroutine(ScytheEndingAnim());
     }
 
     IEnumerator MachineGunEndingAnim()
@@ -124,6 +147,13 @@ public class RandomWeapons : MonoBehaviour
         StartCoroutine(EnableFireBall());
     }
 
+    IEnumerator ScytheEndingAnim()
+    {
+        yield return new WaitForSeconds(diceRollTime);
+        FindObjectOfType<WeaponsUI>().SetEndingFlash(true);
+        StartCoroutine(EnableScythe());
+    }
+
 
     private void SwapWeapons()
     {
@@ -142,6 +172,9 @@ public class RandomWeapons : MonoBehaviour
                 FindObjectOfType<WeaponsUI>().SwappingFireBall();
                 break;
 
+            case 3:
+                FindObjectOfType<WeaponsUI>().SwappingScythe();
+                break;
             default:
                 FindObjectOfType<WeaponsUI>().SwappingMachineGun();
                 break;
@@ -164,6 +197,11 @@ public class RandomWeapons : MonoBehaviour
                 StartCoroutine(SwappingFireBallAnim());
                 break;
 
+            case 3:
+                CurrentWeapon = 3;
+                StartCoroutine(SwappingScytheAnim());
+                break;
+
             default:
                 CurrentWeapon = 0;
                 StartCoroutine(SwappingMachineGunAnim());
@@ -183,10 +221,10 @@ public class RandomWeapons : MonoBehaviour
     private int GetRandomNum()
     {
         prevWeapon = randomNum;
-        randomNum = Random.Range(0, 3);
+        randomNum = Random.Range(0, 4);
         while (randomNum == prevWeapon)
         {
-            randomNum = Random.Range(0, 3);
+            randomNum = Random.Range(0, 4);
         }
         //prevWeapon = randomNum;
 

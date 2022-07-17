@@ -159,6 +159,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365ca90396f06674a8ad20d4ea9a3278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScytheCol: {fileID: 825758751}
+--- !u!1 &825758751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 825758752}
+  - component: {fileID: 825758753}
+  - component: {fileID: 825758754}
+  m_Layer: 0
+  m_Name: Scythe Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &825758752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825758751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1363552682}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &825758753
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825758751}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15528488, y: 0.31578827}
+  serializedVersion: 2
+  m_Radius: 5.7536116
+--- !u!114 &825758754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825758751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8749763989de008479a55e3b6bd0745b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerHit: 50
 --- !u!1 &856026214
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +418,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1363552682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4747851119221445772, guid: 42fe1216566fa8b4fb042c0b94cf7dcd, type: 3}
+  m_PrefabInstance: {fileID: 4747851120473756532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1841199446
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1841199447
 MonoBehaviour:
   m_ObjectHideFlags: 0
