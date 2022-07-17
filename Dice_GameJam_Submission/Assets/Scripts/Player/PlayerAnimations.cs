@@ -12,12 +12,16 @@ public class PlayerAnimations : MonoBehaviour
     void Start()
     {
         myanim = GetComponent<Animator>();
+    }
+
+    private void Awake()
+    {
         StartCoroutine(LoopWings());
     }
 
     IEnumerator LoopWings()
     {
-        AudioSource.PlayClipAtPoint(flapSound, this.transform.position);
+        AudioSource.PlayClipAtPoint(flapSound, this.gameObject.transform.position);
         yield return new WaitForSeconds(5);
         StartCoroutine(LoopWings());
     }
