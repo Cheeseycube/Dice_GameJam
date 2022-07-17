@@ -18,5 +18,10 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         healthbar.fillAmount = player.GetComponent<DamageableComponent>().GetHealthPercentage();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            player.GetComponent<DamageableComponent>().TakeDamage(1);
+        }
     }
 }
