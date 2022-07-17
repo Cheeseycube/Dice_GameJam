@@ -10,7 +10,8 @@ using UnityEngine;
 public class player_shake : MonoBehaviour
 {
     [SerializeField] int frameMax;
-    [SerializeField] float distance;
+    [SerializeField] float distanceX;
+    [SerializeField] float distanceY;
     int frameLoop = 0;
     bool bounce = true;
     // Start is called before the first frame update
@@ -31,11 +32,11 @@ public class player_shake : MonoBehaviour
         }
         if (bounce)
         {
-            transform.position = transform.position + new Vector3(0, distance, 0);
+            transform.position = transform.position + new Vector3(distanceX, distanceY, 0);
             frameLoop++;
         } else
         {
-            transform.position = transform.position - new Vector3(0, distance, 0);
+            transform.position = transform.position - new Vector3(distanceX, distanceY, 0);
             frameLoop--;
         }
     }
