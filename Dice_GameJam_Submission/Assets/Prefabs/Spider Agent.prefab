@@ -289,6 +289,7 @@ MonoBehaviour:
   navMeshobj: {fileID: 7950456789210177201}
   damageLight: {fileID: 3497294848649267680}
   maxHealth: 200
+  damageSound: {fileID: 8300000, guid: 2f6b40be87a31b844b153200a6b6274e, type: 3}
 --- !u!114 &1126216620915148992
 MonoBehaviour:
   m_ObjectHideFlags: 0

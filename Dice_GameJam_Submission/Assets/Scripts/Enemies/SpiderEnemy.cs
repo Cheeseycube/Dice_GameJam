@@ -11,6 +11,7 @@ public class SpiderEnemy : MonoBehaviour, IKillable
     [SerializeField] private NavMeshAgent navMeshobj;
     [SerializeField] private GameObject damageLight;
     [SerializeField] private int maxHealth = 200;
+    [SerializeField] private AudioClip damageSound;
 
     Rigidbody2D rb;
 
@@ -57,6 +58,7 @@ public class SpiderEnemy : MonoBehaviour, IKillable
     }
     public void NotifyDamage()
     {
+        AudioSource.PlayClipAtPoint(damageSound, this.gameObject.transform.position);
         StartCoroutine(DamageLightToggle());
     }
 
