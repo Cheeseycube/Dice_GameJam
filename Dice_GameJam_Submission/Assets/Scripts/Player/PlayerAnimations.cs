@@ -7,10 +7,19 @@ public class PlayerAnimations : MonoBehaviour
     Animator myanim;
     Quaternion currentRotation;
     Vector3 currentEulerAngles;
+    [SerializeField] AudioClip flapSound;
     // Start is called before the first frame update
     void Start()
     {
         myanim = GetComponent<Animator>();
+        AudioSource.PlayClipAtPoint(flapSound, this.transform.position);
+    }
+
+    IEnumerator LoopWings()
+    {
+        AudioSource.PlayClipAtPoint(flapSound, this.transform.position);
+        yield return new WaitForSeconds(5);
+        StartCoroutine(LoopWings());
     }
 
     // Update is called once per frame

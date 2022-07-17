@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot_FireBall : MonoBehaviour
 {
     [SerializeField] private GameObject fire_ball_prefab;
+    [SerializeField] private AudioClip fireSound;
 
     private bool mayshoot = true;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class Shoot_FireBall : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && mayshoot)
         {
+            AudioSource.PlayClipAtPoint(fireSound, this.transform.position);
             Instantiate(fire_ball_prefab, transform.position, transform.rotation);
             mayshoot = false;
             StartCoroutine(FireRepeatTimer());
