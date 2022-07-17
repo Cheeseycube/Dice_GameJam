@@ -24,7 +24,6 @@ public class EnemyShoot : MonoBehaviour
     public bool GetLineOfSight()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, targetPlayer.transform.position - transform.position);
-        Debug.Log(ray.collider.gameObject.tag);
         if (ray.collider.gameObject.CompareTag("Player"))
         {
             CanSeePlayer = true;
