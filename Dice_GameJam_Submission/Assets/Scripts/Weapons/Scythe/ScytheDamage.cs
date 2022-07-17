@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScytheDamage : MonoBehaviour
 {
-    [SerializeField] int damagePerHit = 50;
+    [SerializeField] int damagePerHit = 75;
 
     // Start is called before the first frame update
     void Start()
