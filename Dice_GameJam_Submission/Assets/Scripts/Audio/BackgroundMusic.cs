@@ -10,6 +10,7 @@ public class BackgroundMusic : MonoBehaviour
 
     AudioSource myAudio;
     private int level1 = 2;
+    private bool mayPlay = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +37,9 @@ public class BackgroundMusic : MonoBehaviour
     void Update()
     {
         // you can check the index and change the audio to whatever you want, this is just an example
-        if ((SceneManager.GetActiveScene().buildIndex == 2))
+        if ((SceneManager.GetActiveScene().buildIndex == level1) && mayPlay)
         {
+            mayPlay = false;
             // should play boss music
             myAudio.clip = MainTheme;
             myAudio.Play();
