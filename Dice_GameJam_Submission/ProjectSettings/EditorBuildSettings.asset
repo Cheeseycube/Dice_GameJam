@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alien Planet Stage.unity
     guid: 6d85cc44199346b4eb11cfbab495dc98
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 27dfcd8d38d9e1747851c2229cf2df54
   m_configObjects: {}
