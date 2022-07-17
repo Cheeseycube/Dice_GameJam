@@ -75,7 +75,7 @@ public class TopDownPlayer : MonoBehaviour, IKillable
         //RailGun.SetActive(false);
         //FireBall.SetActive(false);
         PlayerDead = true;
-        FindObjectOfType<GameManager>().ReloadScene();
+        FindObjectOfType<GameManager>().PlayerDeath();
        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

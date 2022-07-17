@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject DeathCanvas;
     private void Awake()
     {
         int numGameSessions = FindObjectsOfType<GameManager>().Length;
@@ -29,9 +30,16 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void PlayerDeath()
+    {
+        Time.timeScale = 0;
+        DeathCanvas.SetActive(true);
+
+    }
     public void ReloadScene()
     {
         FindObjectOfType<TopDownPlayer>().SetPlayerDead(false);
+        DeathCanvas.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
