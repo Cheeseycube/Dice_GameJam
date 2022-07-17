@@ -13,6 +13,7 @@ public class FireRailGun : MonoBehaviour
     [SerializeField] private Animator ChargeAnimator;
     [SerializeField] private SpriteRenderer ChargeSprite;
     [SerializeField] private AudioClip fireSound;
+    [SerializeField] private float fireVolume = 2f;
 
     [SerializeField] int damagePerHit = 150;
 
@@ -52,7 +53,7 @@ public class FireRailGun : MonoBehaviour
                 gunCol.enabled = true;
                 myrend.enabled = true;
                 myanim.SetBool("RailGunFire", true);
-                AudioSource.PlayClipAtPoint(fireSound, this.transform.position);
+                AudioSource.PlayClipAtPoint(fireSound, this.transform.position, fireVolume);
                 StartCoroutine(ShotDuration());
                 //StartCoroutine(FireRepeatTimer());
                 //StartCoroutine(ChargeUptimer());
