@@ -7,7 +7,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] private GameObject enemyBulletPrefab;
     private GameObject targetPlayer;
     private float TimeSinceFire = 0f;
-    private bool CanSeePlayer = false;
+    [SerializeField] private bool CanSeePlayer = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,16 +24,15 @@ public class EnemyShoot : MonoBehaviour
     public bool GetLineOfSight()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, targetPlayer.transform.position - transform.position);
-        if (ray.collider.tag == "Player")
+        Debug.Log(ray.collider.gameObject.tag);
+        if (ray.collider.gameObject.CompareTag("Player"))
         {
-            if (GetComponent<Renderer>().isVisible) // makes sure the enemy is visible to the player before it fires
-            {
-                CanSeePlayer = true;
-                return true;
-            }
+            CanSeePlayer = true;
+            return true;
         }
         else
         {
+            Debug.Log("didnt see");
             CanSeePlayer = false;
             return false;
         }
@@ -47,7 +46,7 @@ public class EnemyShoot : MonoBehaviour
         {
 
             TimeSinceFire = 0f;
-            Instantiate(enemyBulletPrefab, transform.position, transform.rotation).GetComponent<EnemyBulletMovement>().Initialize((targetPlayer.transform.position - transform.position).normalized);
+            Instantiate(enemyBulletPrefab, transform.position, transform.rotation).GetComponent<EnemyProjectileComponent>().Initialize((targetPlayer.transform.position - transform.position).normalized);
         }
     }
 }

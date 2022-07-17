@@ -11,6 +11,7 @@ public class TestEnemy : MonoBehaviour, IKillable
     [SerializeField] int damagePerHit = 10;
     [SerializeField] private NavMeshAgent navMeshobj;
     [SerializeField] private GameObject damageLight;
+    [SerializeField] private int maxHealth = 100;
 
     Rigidbody2D rb;
 
@@ -20,6 +21,7 @@ public class TestEnemy : MonoBehaviour, IKillable
     {
         rb = GetComponent<Rigidbody2D>();
         damageableComponent = this.gameObject.AddComponent<DamageableComponent>();
+        damageableComponent.SetMaxHealth(maxHealth);
 
     }
 

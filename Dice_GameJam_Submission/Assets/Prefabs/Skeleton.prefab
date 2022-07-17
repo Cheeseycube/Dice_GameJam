@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 5340110463634507263}
   - component: {fileID: 5340110463634507249}
   m_Layer: 0
-  m_Name: EnemyAiAgent
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
