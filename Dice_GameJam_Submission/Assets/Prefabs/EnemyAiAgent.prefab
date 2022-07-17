@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerHit: 10
+  navMeshobj: {fileID: 5340110463634507263}
 --- !u!61 &7187270740298973584
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<TopDownPlayer>().SetPlayerDead(false);
         DeathCanvas.SetActive(false);
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }

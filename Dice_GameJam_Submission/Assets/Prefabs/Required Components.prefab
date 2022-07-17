@@ -741,7 +741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1152330924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -966,7 +966,7 @@ MonoBehaviour:
   FireBall: {fileID: 3557171579395169373}
   Scythe: {fileID: 3834441848325012129}
   ScytheCol: {fileID: 825758751}
-  initialWaitTime: 4
+  initialWaitTime: 10
   diceRollTime: 3
   flashingTime: 3
   whiteFlashTime: 0.5
@@ -2209,7 +2209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429379796, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.036
+      value: -1.019
       objectReference: {fileID: 0}
     - target: {fileID: 429379796, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2406,6 +2406,22 @@ PrefabInstance:
     - target: {fileID: 8124033874532362276, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124033874532362282, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_Size.x
+      value: 3.1579962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124033874532362282, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_Size.y
+      value: 1.590112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124033874532362282, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1244998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124033874532362282, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.054729074
       objectReference: {fileID: 0}
     - target: {fileID: 8124033874532362282, guid: 2136b934a89089946912546dd060cf1d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
