@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SpiderEnemy : MonoBehaviour
+public class SpiderEnemy : MonoBehaviour, IKillable
 {
     DamageableComponent damageableComponent;
     BoxCollider2D boxCollider;
