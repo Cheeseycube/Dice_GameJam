@@ -31,7 +31,6 @@ public class EnemyShoot : MonoBehaviour
         }
         else
         {
-            Debug.Log("didnt see");
             CanSeePlayer = false;
             return false;
         }
