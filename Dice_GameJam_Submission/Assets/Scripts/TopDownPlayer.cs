@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity;
+using UnityEngine.SceneManagement;
 
 public class TopDownPlayer : MonoBehaviour, IKillable
 {
@@ -14,7 +15,7 @@ public class TopDownPlayer : MonoBehaviour, IKillable
 
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private int maxHealth = 100;
-    public static bool PlayerDead = false;
+    private bool PlayerDead = false;
     [SerializeField] private GameObject damageLight;
 
     private GameObject MachineGun;
@@ -37,6 +38,7 @@ public class TopDownPlayer : MonoBehaviour, IKillable
 
     void Update()
     {
+        //print(PlayerDead);
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
     }
@@ -45,6 +47,7 @@ public class TopDownPlayer : MonoBehaviour, IKillable
     {
         if (PlayerDead)
         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             rb.velocity = new Vector2(0, 0);
             return;
         }
@@ -67,10 +70,19 @@ public class TopDownPlayer : MonoBehaviour, IKillable
 
     public void Die()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        //MachineGun.SetActive(false);
+        //RailGun.SetActive(false);
+        //FireBall.SetActive(false);
         PlayerDead = true;
+        FindObjectOfType<GameManager>().ReloadScene();
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void SetPlayerDead(bool playerDead)
+    {
+        PlayerDead = playerDead;
+    }
     public void NotifyDamage()
     {
         StartCoroutine(DamageLightToggle());
