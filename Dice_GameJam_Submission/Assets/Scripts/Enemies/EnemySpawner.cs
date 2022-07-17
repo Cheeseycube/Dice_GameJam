@@ -9,8 +9,8 @@ public class EnemySpawner : MonoBehaviour
     private GameObject player;
     [SerializeField] GameObject enemyType;
     
-    private float waitTime = 10f;
-    private float minTime = 2f;
+    [SerializeField] private float waitTime = 10f;
+    [SerializeField] private float minWaitTime = 2f;
 
     [SerializeField] int enemyLimit = 100;
     private int numberOfEnemies = 0;
@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator DecreaseSpawnTime()
     {
         yield return new WaitForSeconds(10);
-        if(waitTime > minTime)
+        if(waitTime > minWaitTime)
         {
             waitTime -= 1f;
         }
