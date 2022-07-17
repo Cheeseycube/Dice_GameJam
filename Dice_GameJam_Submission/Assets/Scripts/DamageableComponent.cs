@@ -22,6 +22,7 @@ public class DamageableComponent : MonoBehaviour
 
     public void SetMaxHealth(int maxHealth)
     {
+        this.currentHealth = maxHealth;
         this.maxHealth = maxHealth;
     }
 
