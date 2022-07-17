@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    
+    private GameObject player;
     [SerializeField] GameObject enemyType;
     
     private float waitTime = 10f;
@@ -18,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player");
         StartCoroutine(SpawnEnemy(enemyType));
         StartCoroutine(DecreaseSpawnTime());
     }
@@ -41,8 +42,8 @@ public class EnemySpawner : MonoBehaviour
         if (numberOfEnemies < enemyLimit)
         {
             numberOfEnemies++;
-            float randomXPosition = Random.Range(-10, 10);
-            float randomYPosition = Random.Range(-10, 10);
+            float randomXPosition = Random.Range(-10, 10) + player.transform.position.x;
+            float randomYPosition = Random.Range(-10, 10) + player.transform.position.y;
             var spawnPosition = new Vector3(randomXPosition, randomYPosition, 0);
             GameObject newEnemy = Instantiate(enemyType, spawnPosition, Quaternion.identity);
             StartCoroutine(SpawnEnemy(enemyType));

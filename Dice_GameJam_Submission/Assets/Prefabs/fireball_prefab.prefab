@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 8124033874532362287, guid: 2136b934a89089946912546dd060cf1d, type: 3}
-  damagePerHit: 100
+  damagePerHit: 25
 --- !u!95 &625023404833165503
 Animator:
   serializedVersion: 3
