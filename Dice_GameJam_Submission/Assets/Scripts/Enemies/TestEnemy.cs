@@ -12,6 +12,7 @@ public class TestEnemy : MonoBehaviour, IKillable
     [SerializeField] private NavMeshAgent navMeshobj;
     [SerializeField] private GameObject damageLight;
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private float spriteScale = 2f;
 
     Rigidbody2D rb;
 
@@ -35,11 +36,11 @@ public class TestEnemy : MonoBehaviour, IKillable
     {
         if (navMeshobj.velocity.x < 0)
         {
-            transform.localScale = new Vector2(2, gameObject.transform.localScale.y);
+            transform.localScale = new Vector2(spriteScale, gameObject.transform.localScale.y);
         }
         else if (navMeshobj.velocity.x > 0)
         {
-            transform.localScale = new Vector2(-2, gameObject.transform.localScale.y);
+            transform.localScale = new Vector2(spriteScale*-1, gameObject.transform.localScale.y);
         }
     }
 

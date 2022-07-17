@@ -98,7 +98,7 @@ Transform:
   m_GameObject: {fileID: 242219838410234792}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 2101443106496051067}
   - {fileID: 1961852810529509798}
@@ -172,6 +172,7 @@ MonoBehaviour:
   navMeshobj: {fileID: 242219837270937015}
   damageLight: {fileID: 6084868328577121141}
   maxHealth: 50
+  spriteScale: 2.5
 --- !u!61 &3096571280641100248
 BoxCollider2D:
   m_ObjectHideFlags: 0
