@@ -33,6 +33,9 @@ public class TestEnemy : MonoBehaviour, IKillable
         }
     }
 
-    public void Die() { Destroy(this.gameObject);  }
+    public void Die() {
+        FindObjectOfType<UIScore>().score += 10;
+        Destroy(this.gameObject);  
+    }
     public void NotifyDamage() { }
 }
