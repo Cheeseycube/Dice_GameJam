@@ -26,6 +26,8 @@ public class TopDownPlayer : MonoBehaviour, IKillable
     void Start()
     {
         MachineGun = GameObject.Find("Gun_placeholder");
+        RailGun = GameObject.Find("Rail_gun placholder");
+        FireBall = GameObject.Find("FireBall");
 
         myrend = GetComponent<SpriteRenderer>();
         damageableComponent = this.gameObject.AddComponent<DamageableComponent>() as DamageableComponent;
@@ -65,6 +67,7 @@ public class TopDownPlayer : MonoBehaviour, IKillable
 
     public void Die()
     {
+        Time.timeScale = 0;
         PlayerDead = true;
     }
 
