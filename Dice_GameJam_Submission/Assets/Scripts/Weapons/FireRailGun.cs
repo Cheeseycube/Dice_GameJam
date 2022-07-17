@@ -68,17 +68,6 @@ public class FireRailGun : MonoBehaviour
 
     }
 
-    // unused at the moment
-    /*IEnumerator ChargeUptimer()
-    {
-        print("charging!");
-        yield return new WaitForSeconds(0.5f);
-        gunCol.enabled = true;
-        myrend.enabled = true;
-        myanim.SetBool("RailGunFire", true);
-        StartCoroutine(ShotDuration());
-        StartCoroutine(FireRepeatTimer());
-    }*/
     IEnumerator ShotDuration()
     {
         yield return new WaitForSeconds(0.5f);
