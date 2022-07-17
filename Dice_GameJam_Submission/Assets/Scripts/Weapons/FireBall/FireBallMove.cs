@@ -9,7 +9,7 @@ public class FireBallMove : MonoBehaviour
     BoxCollider2D myCollider;
     CircleCollider2D explosionCol;
     [SerializeField] private GameObject FirePoint;
-    [SerializeField] int damagePerHit = 100;
+    [SerializeField] int damagePerHit = 25;
 
     private float moveSpeed = 0.4f;
     // Start is called before the first frame update

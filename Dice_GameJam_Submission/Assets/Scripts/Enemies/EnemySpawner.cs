@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     
     [SerializeField] GameObject enemyType;
     
-    private float waitTime = 10f;
+    private float waitTime = 5f;
     private float minTime = 2f;
 
     [SerializeField] int enemyLimit = 100;

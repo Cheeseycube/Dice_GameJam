@@ -10,6 +10,7 @@ public class TestEnemy : MonoBehaviour, IKillable
     BoxCollider2D boxCollider;
     [SerializeField] int damagePerHit = 10;
     [SerializeField] private NavMeshAgent navMeshobj;
+    [SerializeField] private GameObject damageLight;
 
     Rigidbody2D rb;
 
@@ -52,5 +53,14 @@ public class TestEnemy : MonoBehaviour, IKillable
         FindObjectOfType<UIScore>().score += 10;
         Destroy(this.gameObject);  
     }
-    public void NotifyDamage() { }
+    public void NotifyDamage()
+    {
+        StartCoroutine(DamageLightToggle());
+    }
+    IEnumerator DamageLightToggle()
+    {
+        this.damageLight.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        this.damageLight.SetActive(false);
+    }
 }
