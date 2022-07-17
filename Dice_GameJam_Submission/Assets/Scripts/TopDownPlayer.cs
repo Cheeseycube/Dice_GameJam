@@ -17,30 +17,26 @@ public class TopDownPlayer : MonoBehaviour, IKillable
     public static bool PlayerDead = false;
     [SerializeField] private GameObject damageLight;
 
-    List<Sprite> spriteList = new List<Sprite>();
-    [SerializeField] private Sprite FacingRight;
-    [SerializeField] private Sprite FacingForwards;
-    [SerializeField] private Sprite FacingBackwards;
+    private GameObject MachineGun;
+    private GameObject RailGun;
+    private GameObject FireBall;
 
     SpriteRenderer myrend;
     
     void Start()
     {
-        spriteList.Add(FacingRight);
-        spriteList.Add(FacingForwards);
-        spriteList.Add(FacingBackwards);
+        MachineGun = GameObject.Find("Gun_placeholder");
+
         myrend = GetComponent<SpriteRenderer>();
         damageableComponent = this.gameObject.AddComponent<DamageableComponent>() as DamageableComponent;
         rb = GetComponent<Rigidbody2D>();
         damageableComponent.SetMaxHealth(maxHealth);
-        myrend.sprite = spriteList[1];
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        FlipSprite();
     }
 
     private void FixedUpdate()
@@ -65,11 +61,6 @@ public class TopDownPlayer : MonoBehaviour, IKillable
         Vector2 direction = mousePosition - transform.position;
         angle = Vector2.SignedAngle(Vector2.right, direction);
         transform.eulerAngles = new Vector3(0, 0, angle);
-    }
-
-    private void FlipSprite()
-    {
-        
     }
 
     public void Die()
