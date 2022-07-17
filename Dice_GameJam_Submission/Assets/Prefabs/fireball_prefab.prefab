@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -933495447286094584}
   - component: {fileID: 2500908606288968482}
   - component: {fileID: 2557559423498681213}
+  - component: {fileID: 225670316908398182}
   m_Layer: 0
   m_Name: fireball_prefab
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 8124033874532362287, guid: 2136b934a89089946912546dd060cf1d, type: 3}
+  damagePerHit: 100
 --- !u!95 &625023404833165503
 Animator:
   serializedVersion: 3
@@ -4997,3 +4999,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!58 &225670316908398182
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2370928499041035094}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16928315, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.0167193

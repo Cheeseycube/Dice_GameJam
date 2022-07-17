@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScytheAttack : MonoBehaviour
 {
     private bool mayAttack = true;
-
+    [SerializeField] private GameObject ScytheCol;
     Animator myanim;
     // Start is called before the first frame update
     void Start()
@@ -23,12 +23,18 @@ public class ScytheAttack : MonoBehaviour
     {
        Attack();
     }
+
+    public void Set_mayFire(bool FireBool)
+    {
+        mayAttack = FireBool;
+    }
     private void Attack()
     {
         if (Input.GetMouseButton(0) && mayAttack)
         {
             mayAttack = false;
             // enable collider
+            ScytheCol.SetActive(true);
             myanim.SetBool("Scythe Attacking", true);
             StartCoroutine(TransformScaleTimer());
             StartCoroutine(AttackTimer());
@@ -46,6 +52,7 @@ public class ScytheAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         myanim.SetBool("Scythe Attacking", false);
+        ScytheCol.SetActive(false);
         gameObject.transform.localPosition = new Vector2(4.22f, -1.67f);
         gameObject.transform.localScale = new Vector2(2, 2);
     }

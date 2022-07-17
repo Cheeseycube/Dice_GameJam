@@ -10,6 +10,7 @@ public class WeaponsUI : MonoBehaviour
     [SerializeField] private Sprite MachineGun;
     [SerializeField] private Sprite RailGun;
     [SerializeField] private Sprite FireBall;
+    [SerializeField] private Sprite Scythe;
 
     List<Sprite> spriteList = new List<Sprite>();
     private int i = 0;
@@ -21,6 +22,7 @@ public class WeaponsUI : MonoBehaviour
         spriteList.Add(MachineGun);
         spriteList.Add(RailGun);
         spriteList.Add(FireBall);
+        spriteList.Add(Scythe);
     }
 
     // Update is called once per frame
@@ -62,10 +64,16 @@ public class WeaponsUI : MonoBehaviour
         myImage.sprite = spriteList[2];
     }
 
+    public void SetScythe()
+    {
+        myImage.sprite = spriteList[3];
+    }
+
     public void SwappingFireBall()
     {
         myAnim.SetBool("Machine Gun Changing", false);
         myAnim.SetBool("Rail Gun Changing", false);
+        myAnim.SetBool("Scythe Changing", false);
         myAnim.SetBool("Fire Changing", true);
     }
 
@@ -73,6 +81,7 @@ public class WeaponsUI : MonoBehaviour
     {
         myAnim.SetBool("Fire Changing", false);
         myAnim.SetBool("Rail Gun Changing", false);
+        myAnim.SetBool("Scythe Changing", false);
         myAnim.SetBool("Machine Gun Changing", true);
     }
 
@@ -80,7 +89,16 @@ public class WeaponsUI : MonoBehaviour
     {
         myAnim.SetBool("Fire Changing", false);
         myAnim.SetBool("Machine Gun Changing", false);
+        myAnim.SetBool("Scythe Changing", false);
         myAnim.SetBool("Rail Gun Changing", true);
+    }
+
+    public void SwappingScythe()
+    {
+        myAnim.SetBool("Fire Changing", false);
+        myAnim.SetBool("Machine Gun Changing", false);
+        myAnim.SetBool("Rail Gun Changing", false);
+        myAnim.SetBool("Scythe Changing", true);
     }
 
     public void DiceRolling()
@@ -88,6 +106,7 @@ public class WeaponsUI : MonoBehaviour
         myAnim.SetBool("Fire Changing", false);
         myAnim.SetBool("Machine Gun Changing", false);
         myAnim.SetBool("Rail Gun Changing", false);
+        myAnim.SetBool("Scythe Changing", false);
         myAnim.SetBool("Dice Rolling", true);
     }
 
