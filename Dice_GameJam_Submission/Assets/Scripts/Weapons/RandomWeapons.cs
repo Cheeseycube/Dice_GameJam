@@ -8,6 +8,7 @@ public class RandomWeapons : MonoBehaviour
     [SerializeField] private GameObject MachineGun;
     [SerializeField] private GameObject RailGun;
     [SerializeField] private GameObject FireBall;
+    [SerializeField] private GameObject Scythe;
 
     private int randomNum = 0;
     private int prevWeapon = 0;
