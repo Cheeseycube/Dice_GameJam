@@ -1330,6 +1330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScytheCol: {fileID: 825758751}
+  slashSound: {fileID: 8300000, guid: 1a810e91b3d6f1a44aaf182bd30f0f91, type: 3}
 --- !u!114 &5975804342365565878
 MonoBehaviour:
   m_ObjectHideFlags: 0
