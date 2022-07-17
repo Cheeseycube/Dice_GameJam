@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     bool stopSpawning = false;
     private float waitTime = 10f;
     private float minTime = 2f;
-    private const int ENEMY_LIMIT = 50;
+    [SerializeField] int enemyLimit = 15;
     private int numberOfEnemies = 0;
 
     // Start is called before the first frame update
