@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8749763989de008479a55e3b6bd0745b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerHit: 75
+  damagePerHit: 100
 --- !u!1 &1052145289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +2740,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2838272041542098373}
     m_Modifications:
+    - target: {fileID: 3482111794027208913, guid: 7fb0184a9f7925e4bbe53905d2dfc8e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4338158307154979479, guid: 7fb0184a9f7925e4bbe53905d2dfc8e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2845,6 +2849,10 @@ PrefabInstance:
       value: PauseCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6131090562157545816, guid: 7fb0184a9f7925e4bbe53905d2dfc8e8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836554026779542136, guid: 7fb0184a9f7925e4bbe53905d2dfc8e8, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

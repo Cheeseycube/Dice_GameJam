@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator DecreaseSpawnTime()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         if(waitTime > minWaitTime)
         {
             waitTime -= 1f;
