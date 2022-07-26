@@ -42,12 +42,12 @@ public class TopDownMovementComponent : MonoBehaviour
             horizontalInput *= moveLimiter;
             verticalInput *= moveLimiter;
         }
-        move();
+        //move();
     }
 
     private void FixedUpdate()
     {
-        //moveAddForce();
+        moveAddForce();
     }
 
     public void DisableMovement()
@@ -64,6 +64,6 @@ public class TopDownMovementComponent : MonoBehaviour
 
     private void moveAddForce()
     {
-        rb.AddForce(new Vector2(horizontalInput * 100, verticalInput * 100));
+        rb.AddForce(new Vector2(horizontalInput * 80, verticalInput * 80));
     }
 }
