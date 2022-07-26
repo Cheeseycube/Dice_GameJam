@@ -42,12 +42,12 @@ public class TopDownMovementComponent : MonoBehaviour
             horizontalInput *= moveLimiter;
             verticalInput *= moveLimiter;
         }
-        //move();
+        move();
     }
 
     private void FixedUpdate()
     {
-        moveAddForce();
+        //moveAddForce();
     }
 
     public void DisableMovement()
