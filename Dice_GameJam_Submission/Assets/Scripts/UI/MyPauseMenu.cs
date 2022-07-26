@@ -25,7 +25,7 @@ public class MyPauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Pause")) // replace with getbuttondown at some point.  Also experiment with the layers
+        if(Input.GetButtonDown("Pause")) 
         {
             //ControllerPaused = false;
             if(isPaused)
