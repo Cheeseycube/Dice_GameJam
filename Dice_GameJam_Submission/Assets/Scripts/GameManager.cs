@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     }
     public void ReloadScene()
     {
-        FindObjectOfType<TopDownPlayer>().SetPlayerDead(false);
+        FindObjectOfType<Player>().SetPlayerDead(false);
         DeathCanvas.SetActive(false);
         Time.timeScale = 1;
 
