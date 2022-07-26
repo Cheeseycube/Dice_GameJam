@@ -8,7 +8,7 @@ public class MyPauseMenu : MonoBehaviour
 {
     // uncomment the below stuff for controller support
 
-    public GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenu;
     //public GameObject pauseFirstButton;
     public static bool isPaused;
     public static bool ControllerPaused = false;
