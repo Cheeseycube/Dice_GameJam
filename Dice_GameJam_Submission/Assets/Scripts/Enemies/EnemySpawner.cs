@@ -43,11 +43,11 @@ public class EnemySpawner : MonoBehaviour
         if (numberOfEnemies < enemyLimit)
         {
             numberOfEnemies++;
-            float randomXPosition = Random.Range(-10, 10) + player.transform.position.x;
-            float randomYPosition = Random.Range(-10, 10) + player.transform.position.y;
+            //float randomXPosition = Random.Range(-10, 10) + player.transform.position.x;
+            //float randomYPosition = Random.Range(-10, 10) + player.transform.position.y;
             //var spawnPosition = new Vector3(randomXPosition, randomYPosition, 0);
             var spawnPosition = CreateRandomCoordinates();
-            //GameObject newEnemy = Instantiate(enemyType, spawnPosition, Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemyType, spawnPosition, Quaternion.identity);
             StartCoroutine(SpawnWait(enemyType));
             StartCoroutine(SpawnEnemy(enemyType));
         }
@@ -68,12 +68,26 @@ public class EnemySpawner : MonoBehaviour
         float Difference = minDistanceAway - Math.Abs(randomXPosition);
         if (Difference > 0)
         {
-            randomXPosition += Difference;
+            if (randomXPosition < 0)
+            {
+                randomXPosition -= Difference;
+            }
+            else
+            {
+                randomXPosition += Difference;
+            }
         }
         Difference = minDistanceAway - Math.Abs(randomYPosition);
         if (Difference > 0)
         {
-            randomYPosition += Difference;
+            if (randomYPosition < 0)
+            {
+                randomYPosition -= Difference;
+            }
+            else
+            {
+                randomYPosition += Difference;
+            }
         }
         return new Vector3(randomXPosition, randomYPosition, 0);
     }
